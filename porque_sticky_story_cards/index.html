@@ -41,11 +41,12 @@
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <span class="sr-only">Abrir menu</span>
     </button>
   </div>
 
-  <div class="nav-mobile" id="navMobile">
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
     <ul>
       <li><a href="#manifesto">Sobre</a></li>
       <li><a href="#atuacao">Programas</a></li>
@@ -60,7 +61,7 @@
   <!-- HERO -->
   <section class="hero" aria-label="Abertura">
     <div class="hero-media" aria-hidden="true">
-      <img src="assets/images/hero/hero2.jpeg" alt="" id="heroImg">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&h=1200&q=82" alt="" id="heroImg">
       <div class="hero-overlay"></div>
     </div>
 
@@ -81,27 +82,59 @@
     </a>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+ <!-- MANIFESTO -->
+  <section class="manifesto manifesto--enhanced" id="manifesto" aria-labelledby="manifesto-title">
+    <div class="manifesto__bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&h=1400&q=82" alt="" loading="lazy">
+    </div>
+    <div class="manifesto__shade" aria-hidden="true"></div>
+    <div class="manifesto__grain" aria-hidden="true"></div>
+    <div class="manifesto__grid" aria-hidden="true"></div>
+    <div class="manifesto__orb manifesto__orb--a" aria-hidden="true"></div>
+    <div class="manifesto__orb manifesto__orb--b" aria-hidden="true"></div>
+
     <div class="container">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>A nossa história</p>
-      <h2 class="section-title" id="manifesto-title" data-reveal>Nascido no Huambo, para formar quem vai liderar Angola</h2>
-      <p class="manifesto-text" data-reveal>O Projeto Jovens do Valor nasceu no Huambo, idealizado por José Salomão Setamba como uma iniciativa educativa, social e formativa voltada para o desenvolvimento integral da juventude angolana. Desde a sua criação, promove palestras, workshops, fóruns e programas de capacitação, em parceria com instituições públicas, privadas e da sociedade civil.</p>
+      <div class="manifesto__layout">
+        <div class="manifesto__content">
+          <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>A nossa história</p>
+          <h2 class="section-title" id="manifesto-title" data-reveal>Nascido no Huambo, para formar quem vai liderar Angola</h2>
+          <p class="manifesto-text" data-reveal>O Projeto Jovens do Valor nasceu no Huambo, idealizado por José Salomão Setamba como uma iniciativa educativa, social e formativa voltada para o desenvolvimento integral da juventude angolana. Desde a sua criação, promove palestras, workshops, fóruns e programas de capacitação, em parceria com instituições públicas, privadas e da sociedade civil.</p>
 
-      <blockquote class="manifesto-quote" data-reveal>
-        <p>“Um jovem que aprende a liderar com ética torna-se a fundação de uma comunidade inteira.”</p>
-        <cite>José Salomão Setamba, Fundador</cite>
-      </blockquote>
+          <blockquote class="manifesto-quote" data-reveal>
+            <p>“Um jovem que aprende a liderar com ética torna-se a fundação de uma comunidade inteira.”</p>
+            <cite>José Salomão Setamba, Fundador</cite>
+          </blockquote>
 
-      <div class="mv-split">
-        <div class="mv-item" data-reveal>
-          <h3>Missão</h3>
-          <p>Formar jovens conscientes, éticos e preparados para liderar, promovendo competências pessoais, profissionais e sociais que transformem comunidades e o país.</p>
+          <div class="mv-split">
+            <div class="mv-item" data-reveal>
+              <h3>Missão</h3>
+              <p>Formar jovens conscientes, éticos e preparados para liderar, promovendo competências pessoais, profissionais e sociais que transformem comunidades e o país.</p>
+            </div>
+            <div class="mv-item" data-reveal>
+              <h3>Visão</h3>
+              <p>Ser uma das principais plataformas de desenvolvimento juvenil em Angola — referência em liderança, empreendedorismo, cidadania e inovação social.</p>
+            </div>
+          </div>
         </div>
-        <div class="mv-item" data-reveal>
-          <h3>Visão</h3>
-          <p>Ser uma das principais plataformas de desenvolvimento juvenil em Angola — referência em liderança, empreendedorismo, cidadania e inovação social.</p>
-        </div>
+
+        <aside class="manifesto__art" aria-hidden="true">
+          <figure class="manifesto-card manifesto-card--main" data-reveal>
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
+          </figure>
+
+          <figure class="manifesto-card manifesto-card--small" data-reveal>
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&h=840&q=82" alt="" loading="lazy">
+          </figure>
+
+          <div class="manifesto-chip manifesto-chip--quote" data-reveal>
+            <span>Desde o Huambo</span>
+            <strong>para Angola</strong>
+          </div>
+
+          <figure class="manifesto-chip manifesto-chip--photo" data-reveal>
+            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=520&h=520&q=82" alt="" loading="lazy">
+          </figure>
+        </aside>
       </div>
     </div>
   </section>
@@ -118,7 +151,7 @@
         <ul class="value-slider" id="valueSlider" tabindex="0" aria-label="Os nossos valores">
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/lideranca.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">01</span>
                 <h3>Liderança</h3>
@@ -128,7 +161,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/etica.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">02</span>
                 <h3>Ética</h3>
@@ -138,7 +171,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/integridade.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">03</span>
                 <h3>Integridade</h3>
@@ -148,7 +181,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/respeito.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">04</span>
                 <h3>Respeito</h3>
@@ -158,7 +191,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/excelencia.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">05</span>
                 <h3>Excelência</h3>
@@ -168,7 +201,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/responsabilidade-social.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">06</span>
                 <h3>Responsabilidade Social</h3>
@@ -178,7 +211,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/solidariedade.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">07</span>
                 <h3>Solidariedade</h3>
@@ -188,7 +221,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/inclusao.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">08</span>
                 <h3>Inclusão</h3>
@@ -198,7 +231,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/cooperacao.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">09</span>
                 <h3>Cooperação</h3>
@@ -208,7 +241,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/desenvolvimento-humano.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">10</span>
                 <h3>Desenvolvimento Humano</h3>
@@ -218,7 +251,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/inovacao.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">11</span>
                 <h3>Inovação</h3>
@@ -228,7 +261,7 @@
           </article></li>
           <li class="value-slide"><article class="value-card" data-reveal>
             <div class="value-image">
-              <img src="images/valores/compromisso.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
               <div class="value-card__overlay">
                 <span class="value-card__index">12</span>
                 <h3>Compromisso</h3>
@@ -261,7 +294,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/palestras.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&h=900&q=82" alt="" loading="lazy">
               <span class="slide-media__index">01</span>
             </div>
             <div class="slide-panel">
@@ -277,7 +310,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/workshops.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&h=900&q=82" alt="" loading="lazy">
               <span class="slide-media__index">02</span>
             </div>
             <div class="slide-panel">
@@ -293,7 +326,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/formacoes.jpg" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&h=900&q=82" alt="" loading="lazy">
               <span class="slide-media__index">03</span>
             </div>
             <div class="slide-panel">

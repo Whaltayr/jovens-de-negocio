@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroMotion();
   initHeroParallax();
   initSectionMotion();
-  initPorqueParallax();
+  initPorqueSticky();
   initSlider();
   initValueSlider();
 });
@@ -541,97 +541,80 @@ function initValueSlider() {
 
 
 // --------------------------------------------
-// Porquê — Parallax Impact Gallery
+// Porquê — Sticky Story Cards
 // --------------------------------------------
-function initPorqueParallax() {
-  const section = document.querySelector('.porque--parallax');
+function initPorqueSticky() {
+  const section = document.querySelector('.porque--sticky');
   if (!section || prefersReducedMotion || !hasGSAP) return;
 
-  const bg = section.querySelector('.porque-parallax__bg img');
-  const rows = gsap.utils.toArray('.impact-row');
+  const cards = gsap.utils.toArray('.porque-card');
+  const progress = section.querySelector('.porque__progress-line span');
+  const current = section.querySelector('.porque__progress-current');
 
-  if (bg) {
-    gsap.to(bg, {
-      yPercent: 10,
-      scale: 1.14,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-  }
+  if (!cards.length) return;
 
-  gsap.fromTo('.porque-parallax__head > *',
-    { opacity: 0, x: -42 },
+  gsap.fromTo('.porque__intro',
+    { opacity: 0, x: -34 },
     {
       opacity: 1,
       x: 0,
       duration: .86,
-      stagger: .1,
       ease: 'power3.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 78%',
-        once: true
-      }
+      scrollTrigger: { trigger: section, start: 'top 76%', once: true }
     }
   );
 
-  rows.forEach((row, index) => {
-    const media = row.querySelector('.impact-row__media');
-    const img = row.querySelector('.impact-row__media img');
-    const textBits = row.querySelectorAll('.impact-row__text > *');
-    const fromX = row.classList.contains('impact-row--right') ? 58 : -58;
-    const textX = row.classList.contains('impact-row--right') ? -52 : 52;
+  cards.forEach((card, index) => {
+    const media = card.querySelector('.porque-card__media');
+    const img = card.querySelector('.porque-card__media img');
+    const body = card.querySelector('.porque-card__body');
+
+    gsap.fromTo(card,
+      { opacity: 0, y: 70, scale: .965 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: .86,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: card, start: 'top 86%', once: true }
+      }
+    );
 
     if (media) {
       gsap.fromTo(media,
-        { opacity: 0, x: fromX, y: 34, rotate: index % 2 ? 7 : -7 },
+        { x: -34, opacity: .72 },
         {
-          opacity: 1,
           x: 0,
-          y: 0,
-          rotate: index % 2 ? 5 : -4,
+          opacity: 1,
           duration: .9,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: row,
-            start: 'top 78%',
-            once: true
-          }
+          scrollTrigger: { trigger: card, start: 'top 84%', once: true }
         }
       );
     }
 
-    if (textBits.length) {
-      gsap.fromTo(textBits,
-        { opacity: 0, x: textX, y: 18 },
+    if (body) {
+      gsap.fromTo(body,
+        { x: 38, opacity: 0 },
         {
-          opacity: 1,
           x: 0,
-          y: 0,
-          duration: .78,
-          stagger: .08,
+          opacity: 1,
+          duration: .86,
+          delay: .08,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: row,
-            start: 'top 72%',
-            once: true
-          }
+          scrollTrigger: { trigger: card, start: 'top 84%', once: true }
         }
       );
     }
 
     if (img) {
       gsap.to(img, {
-        yPercent: index % 2 ? -9 : 9,
-        scale: 1.14,
+        yPercent: 8,
+        scale: 1.09,
         ease: 'none',
         scrollTrigger: {
-          trigger: row,
+          trigger: card,
           start: 'top bottom',
           end: 'bottom top',
           scrub: true
@@ -639,15 +622,19 @@ function initPorqueParallax() {
       });
     }
 
-    gsap.to(row, {
-      yPercent: index % 2 ? -4 : 4,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: row,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => updatePorqueProgress(index),
+      onEnterBack: () => updatePorqueProgress(index)
     });
   });
+
+  function updatePorqueProgress(index) {
+    if (current) current.textContent = String(index + 1).padStart(2, '0');
+    if (progress) progress.style.width = `${((index + 1) / cards.length) * 100}%`;
+  }
+
+  updatePorqueProgress(0);
 }

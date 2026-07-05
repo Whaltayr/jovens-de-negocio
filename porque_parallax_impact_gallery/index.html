@@ -41,12 +41,11 @@
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-      <span class="sr-only">Abrir menu</span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 
-  <div class="nav-mobile" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+  <div class="nav-mobile" id="navMobile">
     <ul>
       <li><a href="#manifesto">Sobre</a></li>
       <li><a href="#atuacao">Programas</a></li>
@@ -314,21 +313,74 @@
   </section>
 
   <!-- PORQUÊ ESCOLHER-NOS -->
-  <section class="porque" id="porque" aria-labelledby="porque-title">
-    <svg class="porque-mark" viewBox="0 0 40 40" aria-hidden="true" data-reveal><use href="#mark"></use></svg>
+  <section class="porque porque--sticky" id="porque" aria-labelledby="porque-title">
+    <div class="porque__bg" aria-hidden="true"></div>
+    <div class="porque__grain" aria-hidden="true"></div>
+    <div class="porque__orb porque__orb--a" aria-hidden="true"></div>
+    <div class="porque__orb porque__orb--b" aria-hidden="true"></div>
+
+    <div class="container porque__layout">
+      <aside class="porque__intro">
+        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Porquê o Jovens do Valor</p>
+        <h2 class="section-title" id="porque-title" data-reveal>O que nos diferencia</h2>
+        <p class="porque__lead" data-reveal>Mais do que eventos, criamos uma jornada de desenvolvimento juvenil com método, valores, oportunidades reais e acompanhamento contínuo.</p>
+        <figure class="porque__portrait" data-reveal aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&h=1000&q=82" alt="" loading="lazy">
+          <figcaption>Educação · Liderança · Futuro</figcaption>
+        </figure>
+        <div class="porque__progress" aria-hidden="true">
+          <span class="porque__progress-current">01</span>
+          <span class="porque__progress-line"><span></span></span>
+          <span class="porque__progress-total">05</span>
+        </div>
+      </aside>
+
+      <div class="porque__cards" aria-label="Diferenciais do projeto">
+        <article class="porque-card" data-porque-card>
+          <div class="porque-card__media"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=900&q=82" alt="" loading="lazy"></div>
+          <div class="porque-card__body">
+            <span class="porque-card__number">01</span>
+            <h3>Liderança ética como eixo central</h3>
+            <p>Formação baseada em valores, carácter e responsabilidade, não apenas em técnica.</p>
+          </div>
+        </article>
+        <article class="porque-card" data-porque-card>
+          <div class="porque-card__media"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&h=900&q=82" alt="" loading="lazy"></div>
+          <div class="porque-card__body">
+            <span class="porque-card__number">02</span>
+            <h3>Educação + empregabilidade + cidadania</h3>
+            <p>Um percurso integrado que prepara o jovem para pensar, agir, trabalhar e servir a comunidade.</p>
+          </div>
+        </article>
+        <article class="porque-card" data-porque-card>
+          <div class="porque-card__media"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&h=900&q=82" alt="" loading="lazy"></div>
+          <div class="porque-card__body">
+            <span class="porque-card__number">03</span>
+            <h3>Networking real</h3>
+            <p>Ligação entre jovens, empresas, instituições e mentores que podem abrir portas concretas.</p>
+          </div>
+        </article>
+        <article class="porque-card" data-porque-card>
+          <div class="porque-card__media"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&h=900&q=82" alt="" loading="lazy"></div>
+          <div class="porque-card__body">
+            <span class="porque-card__number">04</span>
+            <h3>Parcerias estratégicas</h3>
+            <p>Trabalho conjunto com universidades, empresas, bancos, organizações e instituições públicas.</p>
+          </div>
+        </article>
+        <article class="porque-card" data-porque-card>
+          <div class="porque-card__media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&h=900&q=82" alt="" loading="lazy"></div>
+          <div class="porque-card__body">
+            <span class="porque-card__number">05</span>
+            <h3>Acompanhamento contínuo</h3>
+            <p>O desenvolvimento do jovem não termina numa palestra: continua em comunidade, orientação e prática.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
     <div class="container">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Porquê o Jovens do Valor</p>
-      <h2 class="section-title" id="porque-title" data-reveal>O que nos diferencia</h2>
-
-      <ul class="diff-list">
-        <li class="diff-row" data-reveal><h3>Liderança ética como eixo central</h3><p>Formação baseada em valores, não apenas em técnica.</p></li>
-        <li class="diff-row" data-reveal><h3>Educação + empregabilidade + cidadania</h3><p>Um percurso integrado, não temas isolados.</p></li>
-        <li class="diff-row" data-reveal><h3>Networking real</h3><p>Ligação entre jovens, empresas e instituições.</p></li>
-        <li class="diff-row" data-reveal><h3>Parcerias estratégicas</h3><p>Universidades, empresas, bancos e ONGs.</p></li>
-        <li class="diff-row" data-reveal><h3>Acompanhamento contínuo</h3><p>O desenvolvimento do jovem não termina na sessão.</p></li>
-      </ul>
-
-      <p class="diff-banner" data-reveal>Presencial · Online · Híbrido — do Huambo para todas as províncias de Angola e, a seguir, para os países africanos de língua portuguesa.</p>
+      <p class="diff-banner porque__banner" data-reveal>Presencial · Online · Híbrido — do Huambo para todas as províncias de Angola e, a seguir, para os países africanos de língua portuguesa.</p>
     </div>
   </section>
 
