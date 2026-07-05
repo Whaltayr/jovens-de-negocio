@@ -15,7 +15,7 @@
   /* tipografia */
   --font-display: "Fraunces", serif;
   --font-body: "Manrope", sans-serif;
-  --fs-h1: clamp(2.75rem, 1.6rem + 5vw, 6rem);
+  --fs-h1: clamp(2.75rem, a1.6rem + 5vw, 6rem);
   --fs-h2: clamp(2rem, 1.5rem + 2vw, 3.4rem);
   --fs-h3: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   --fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
@@ -761,17 +761,17 @@ body.nav-open {
 }
 
 
+
 /* ============================================
-   MOTION + UNSPLASH PATCH v4.1
-   Suporte visual para GSAP e imagens remotas Unsplash
+   SURGICAL PATCH — NAVBAR + HERO MOTION
+   Não redesenha o site inteiro; corrige estado, acessibilidade e motion.
    ============================================ */
 
-/* Corrige typo que vinha no CSS original */
+/* Corrige typo que quebra o custom property */
 :root {
   --fs-h1: clamp(2.75rem, 1.6rem + 5vw, 6rem);
 }
 
-/* Acessibilidade do texto oculto no botão hamburger */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -784,71 +784,20 @@ body.nav-open {
   border: 0 !important;
 }
 
-/* Imagens de exemplo: deixam o preview mais consistente */
-.hero-media img,
-.value-image img,
-.slide-media img {
-  background: var(--bg-elevated);
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-media img {
-  filter: saturate(.86) contrast(1.06) brightness(.78);
-}
-
-.value-image img,
-.slide-media img {
-  filter: saturate(.88) contrast(1.04) brightness(.84);
-}
-
-/* Suporte de motion */
-.hero-title .word {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-
-.hero-title .word span {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
-.hero .eyebrow-light,
-.hero-sub,
-.hero-actions,
-.hero-bottom-row,
-.scroll-cue,
-[data-reveal],
-.value-card,
-.slide-card,
-.slide-media,
-.slide-panel {
-  will-change: transform, opacity;
-}
-
-.hero-bottom-row {
-  overflow: hidden;
-}
-
-.value-card,
-.slide-card {
-  transform-origin: center bottom;
-}
-
-.value-image img,
-.slide-media img,
-.hero-media img {
-  will-change: transform;
-}
-
-/* Mantém o menu mobile sólido quando abre */
 body.nav-open {
   overflow: hidden;
 }
 
+/* Header fica legível tanto parado como durante menu aberto */
 .site-header {
   z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background .28s var(--ease),
+    border-color .28s var(--ease),
+    backdrop-filter .28s var(--ease),
+    box-shadow .28s var(--ease);
 }
 
 .site-header.scrolled,
@@ -865,23 +814,196 @@ body.nav-open {
   z-index: 1020;
 }
 
+/* Botão hamburger/fechar */
 .nav-toggle {
   position: relative;
   z-index: 1030;
+  color: var(--ink);
+  border-radius: 999px;
+  border: 1px solid rgba(244, 236, 221, .16);
+  background: rgba(244, 236, 221, .055);
+  transition:
+    background .24s var(--ease),
+    border-color .24s var(--ease),
+    color .24s var(--ease);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: rgba(232, 200, 119, .45);
+  background: rgba(201, 151, 46, .12);
 }
 
 .nav-toggle span:not(.sr-only) {
   background: currentColor;
+  transform-origin: center;
 }
 
+.nav-toggle[aria-expanded="true"] {
+  color: var(--gold-soft);
+  border-color: rgba(232, 200, 119, .55);
+  background: rgba(201, 151, 46, .14);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav: estado robusto e background sempre visível */
 .nav-mobile {
+  display: block;
+  position: fixed;
+  inset: 0;
   z-index: 1010;
+  padding: 6.5rem var(--pad-inline) 2rem;
+  background:
+    radial-gradient(circle at 80% 8%, rgba(201, 151, 46, .17), transparent 34%),
+    linear-gradient(180deg, rgba(15, 11, 7, .985), rgba(15, 11, 7, 1));
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .42);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-14px);
+  transition:
+    opacity .32s var(--ease),
+    visibility .32s var(--ease),
+    transform .32s var(--ease);
+  overflow-y: auto;
 }
 
 .nav-mobile.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.nav-mobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid rgba(244, 236, 221, .12);
+  font-size: clamp(1.9rem, 9vw, 3.8rem);
+  line-height: .96;
+}
+
+.nav-mobile a::after {
+  content: "→";
+  font-family: var(--font-body);
+  color: var(--gold-soft);
+  font-size: .55em;
+  opacity: .75;
+}
+
+@media (min-width: 781px) {
+  .nav-mobile {
+    display: none;
+  }
+}
+
+/* Hero GSAP support: mantém o estilo, melhora a direção de entrada */
+.hero-title .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.hero-title .word span {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero .eyebrow-light,
+.hero-sub,
+.hero-actions,
+.scroll-cue {
+  will-change: transform, opacity;
+}
+
+/* Sliders: cursor drag e botões consistentes */
+.value-slider,
+.slider {
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-inline: contain;
+}
+
+.value-slider.is-dragging,
+.slider.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.value-slider.is-dragging *,
+.slider.is-dragging * {
+  user-select: none;
+}
+
+.slider-btn {
+  display: grid;
+  place-items: center;
+}
+
+.slider-btn.is-disabled,
+.slider-btn:disabled {
+  opacity: .38;
+  pointer-events: none;
+}
+
+.value-prev,
+.slider-prev {
+  left: clamp(.7rem, 2vw, 1.8rem);
+}
+
+.value-next,
+.slider-next {
+  right: clamp(.7rem, 2vw, 1.8rem);
+}
+
+@media (max-width: 640px) {
+  .slider-btn {
+    display: grid;
+    top: auto;
+    bottom: -.25rem;
+    translate: 0 0;
+  }
+
+  .value-slider-wrap,
+  .program-slider-shell,
+  .slider-wrap {
+    padding-bottom: 3rem;
+  }
+
+  .value-prev,
+  .slider-prev {
+    left: var(--pad-inline);
+  }
+
+  .value-next,
+  .slider-next {
+    right: var(--pad-inline);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -889,17 +1011,11 @@ body.nav-open {
   .hero .eyebrow-light,
   .hero-sub,
   .hero-actions,
-  .hero-bottom-row,
   .scroll-cue,
-  [data-reveal],
-  .value-card,
-  .slide-card,
-  .slide-media,
-  .slide-panel {
+  [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
-    clip-path: none !important;
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
   }
 }
