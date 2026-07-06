@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroMotion();
   initHeroParallax();
   initSectionMotion();
+  initPorqueParallax();
   initSlider();
   initValueSlider();
 });
@@ -66,83 +67,6 @@ function initSmoothScroll() {
       }
     });
   });
-
-
-/* ============================================
-   Adicionar dentro de initSectionMotion() ou chamar à parte
-   ============================================ */
-function initManifestoMotion() {
-  if (prefersReducedMotion || !hasGSAP) return;
-
-  const section = document.querySelector('.manifesto--enhanced');
-  if (!section) return;
-
-  const bgImg = section.querySelector('.manifesto__bg img');
-  const mainCard = section.querySelector('.manifesto-card--main');
-  const smallCard = section.querySelector('.manifesto-card--small');
-  const chip = section.querySelector('.manifesto-chip--quote');
-
-  if (bgImg) {
-    gsap.to(bgImg, {
-      yPercent: 8,
-      scale: 1.1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-  }
-
-  if (mainCard) {
-    gsap.fromTo(mainCard,
-      { opacity: 0, x: 46, rotate: -4 },
-      {
-        opacity: 1,
-        x: 0,
-        rotate: -2.2,
-        duration: .9,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: section, start: 'top 78%', once: true }
-      }
-    );
-  }
-
-  if (smallCard) {
-    gsap.fromTo(smallCard,
-      { opacity: 0, x: -40, rotate: 8 },
-      {
-        opacity: 1,
-        x: 0,
-        rotate: 5,
-        duration: .86,
-        delay: .08,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: section, start: 'top 78%', once: true }
-      }
-    );
-  }
-
-  if (chip) {
-    gsap.fromTo(chip,
-      { opacity: 0, y: 22 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: .7,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: section, start: 'top 80%', once: true }
-      }
-    );
-  }
-}
-
-/* E chama assim no DOMContentLoaded:
-initManifestoMotion();
-*/
-
 }
 
 // --------------------------------------------
@@ -612,5 +536,118 @@ function initValueSlider() {
     next: document.getElementById('valueNext'),
     mode: 'item',
     progressFill: document.getElementById('valueProgressFill')
+  });
+}
+
+
+// --------------------------------------------
+// Porquê — Parallax Impact Gallery
+// --------------------------------------------
+function initPorqueParallax() {
+  const section = document.querySelector('.porque--parallax');
+  if (!section || prefersReducedMotion || !hasGSAP) return;
+
+  const bg = section.querySelector('.porque-parallax__bg img');
+  const rows = gsap.utils.toArray('.impact-row');
+
+  if (bg) {
+    gsap.to(bg, {
+      yPercent: 10,
+      scale: 1.14,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
+
+  gsap.fromTo('.porque-parallax__head > *',
+    { opacity: 0, x: -42 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: .86,
+      stagger: .1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 78%',
+        once: true
+      }
+    }
+  );
+
+  rows.forEach((row, index) => {
+    const media = row.querySelector('.impact-row__media');
+    const img = row.querySelector('.impact-row__media img');
+    const textBits = row.querySelectorAll('.impact-row__text > *');
+    const fromX = row.classList.contains('impact-row--right') ? 58 : -58;
+    const textX = row.classList.contains('impact-row--right') ? -52 : 52;
+
+    if (media) {
+      gsap.fromTo(media,
+        { opacity: 0, x: fromX, y: 34, rotate: index % 2 ? 7 : -7 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          rotate: index % 2 ? 5 : -4,
+          duration: .9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: row,
+            start: 'top 78%',
+            once: true
+          }
+        }
+      );
+    }
+
+    if (textBits.length) {
+      gsap.fromTo(textBits,
+        { opacity: 0, x: textX, y: 18 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: .78,
+          stagger: .08,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: row,
+            start: 'top 72%',
+            once: true
+          }
+        }
+      );
+    }
+
+    if (img) {
+      gsap.to(img, {
+        yPercent: index % 2 ? -9 : 9,
+        scale: 1.14,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: row,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    gsap.to(row, {
+      yPercent: index % 2 ? -4 : 4,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: row,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
   });
 }

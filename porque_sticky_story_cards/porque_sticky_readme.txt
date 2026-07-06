@@ -1,1 +1,0 @@
-Aplicar: trocar secção PORQUÊ pelo HTML, colar CSS no fim do styles.css, adicionar initPorqueSticky() no script ou usar script_porque_sticky_v5.js.

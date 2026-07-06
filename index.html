@@ -24,34 +24,39 @@
   </symbol>
 </svg>
 
-<header class="site-header" id="topo">
-  <div class="container header-inner">
-    <a href="#topo" class="brand">
+<header class="site-header jdv-header" id="topo">
+  <div class="container jdv-header__bar">
+    <a href="index.html#topo" class="brand jdv-brand">
       <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
       <span class="brand-name">Jovens<em>do Valor</em></span>
     </a>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <ul class="nav-list">
-        <li><a href="#manifesto">Sobre</a></li>
-        <li><a href="#atuacao">Programas</a></li>
+    <nav class="jdv-nav" aria-label="Navegação principal">
+      <ul class="jdv-nav__list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle jdv-menu-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span class="sr-only">Abrir menu</span>
     </button>
   </div>
 
-  <div class="nav-mobile" id="navMobile">
-    <ul>
-      <li><a href="#manifesto">Sobre</a></li>
-      <li><a href="#atuacao">Programas</a></li>
-      <li><a href="galeria.html">Galeria</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+  <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+    <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="sobre-programas.html">Programas</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -261,7 +266,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/palestras.jpg" alt="" loading="lazy">
+              <img src="assets/images/pessoas6.jpeg" alt="" loading="lazy">
               <span class="slide-media__index">01</span>
             </div>
             <div class="slide-panel">
@@ -277,7 +282,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/workshops.jpg" alt="" loading="lazy">
+              <img src="assets/images/palco9.jpeg" alt="" loading="lazy">
               <span class="slide-media__index">02</span>
             </div>
             <div class="slide-panel">
@@ -293,7 +298,7 @@
         <li class="slide">
           <article class="slide-card" data-reveal>
             <div class="slide-media" aria-hidden="true">
-              <img src="images/atuacao/formacoes.jpg" alt="" loading="lazy">
+              <img src="assets/images/" alt="" loading="lazy">
               <span class="slide-media__index">03</span>
             </div>
             <div class="slide-panel">
@@ -336,7 +341,7 @@
     <div class="porque-parallax__stage" aria-label="Diferenciais do projeto">
       <article class="impact-row impact-row--left" data-impact-row>
         <figure class="impact-row__media impact-row__media--a" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
+          <img src="assets/images/orator.jpeg" alt="" loading="lazy">
         </figure>
         <div class="impact-row__text">
           <span>01</span>
@@ -347,7 +352,7 @@
 
       <article class="impact-row impact-row--right" data-impact-row>
         <figure class="impact-row__media impact-row__media--b" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&h=1100&q=82" alt="" loading="lazy">
+          <img src="assets/images/palco6.jpeg" alt="" loading="lazy">
         </figure>
         <div class="impact-row__text">
           <span>02</span>

@@ -24,279 +24,96 @@
   </symbol>
 </svg>
 
-<header class="site-header" id="topo">
-  <div class="container header-inner">
-    <a href="index.html#topo" class="brand">
+<header class="site-header jdv-header" id="topo">
+  <div class="container jdv-header__bar">
+    <a href="index.html#topo" class="brand jdv-brand">
       <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
       <span class="brand-name">Jovens<em>do Valor</em></span>
     </a>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <ul class="nav-list">
-        <li><a href="index.html#manifesto">Sobre</a></li>
-        <li><a href="index.html#atuacao">Programas</a></li>
+    <nav class="jdv-nav" aria-label="Navegação principal">
+      <ul class="jdv-nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html" aria-current="page">Galeria</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    <button class="nav-toggle jdv-menu-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
       <span class="sr-only">Abrir menu</span>
     </button>
   </div>
 
-  <div class="nav-mobile" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
-    <ul>
-      <li><a href="index.html#manifesto">Sobre</a></li>
-      <li><a href="index.html#atuacao">Programas</a></li>
-      <li><a href="galeria.html" aria-current="page">Galeria</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
+  <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+    <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre-programas.html">Programas</a></li>
+        <li><a href="galeria.html" aria-current="page">Galeria</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <main id="conteudo">
-
-  <section class="gallery-hero" aria-labelledby="gallery-title">
-    <div class="gallery-hero__bg" aria-hidden="true">
-      <img src="assets/images/hero/hero.jpeg" alt="">
-    </div>
-    <div class="gallery-hero__shade" aria-hidden="true"></div>
-    <div class="gallery-hero__grain" aria-hidden="true"></div>
-
-    <div class="container gallery-hero__inner">
-      <p class="eyebrow eyebrow-light" data-reveal>
-        <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
-        Momentos do projeto
-      </p>
-
-      <h1 class="gallery-hero__title" id="gallery-title" data-split-gallery>Galeria Jovens do Valor</h1>
-
-      <div class="gallery-hero__bottom">
-        <p data-reveal>Registos de palestras, workshops, fóruns, formações e encontros que mostram a juventude angolana em movimento.</p>
-        <a href="#galeria" class="btn btn-primary" data-reveal>Ver momentos</a>
-      </div>
-
-      <ul class="gallery-stats" aria-label="Resumo da galeria" data-reveal>
-        <li><strong>05</strong><span>Categorias</span></li>
-        <li><strong>12</strong><span>Momentos</span></li>
-        <li><strong>360°</strong><span>Impacto juvenil</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="gallery-featured" aria-labelledby="featured-title">
+  <section class="gallery-clean" id="galeria" aria-label="Galeria">
     <div class="container">
-      <div class="gallery-section-head">
-        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Destaques</p>
-        <h2 class="section-title" id="featured-title" data-reveal>Histórias que merecem ser vistas</h2>
+      <div class="edition-filter" aria-label="Filtrar por edição">
+        <button type="button" class="is-active" data-edition-filter="primeira">Primeira edição</button>
+        <button type="button" data-edition-filter="segunda">Segunda edição</button>
       </div>
 
-      <div class="featured-mosaic" data-reveal>
-        <button class="featured-tile featured-tile--large" type="button" data-lightbox-src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Palestra de Liderança Juvenil" data-lightbox-meta="Huambo · 2025">
-          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Palestra de Liderança Juvenil" loading="lazy">
-          <span><small>Palestras</small><strong>Liderança que inspira</strong></span>
+      <div class="gallery-image-grid" data-gallery-grid>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic.jpeg" alt="Palestra de Liderança Juvenil" loading="lazy">
         </button>
-        <button class="featured-tile" type="button" data-lightbox-src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Workshop de Comunicação e Oratória" data-lightbox-meta="Formação prática">
-          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Workshop de Comunicação e Oratória" loading="lazy">
-          <span><small>Workshop</small><strong>Prática real</strong></span>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic2.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic2.jpeg" alt="Workshop de Comunicação e Oratória" loading="lazy">
         </button>
-        <button class="featured-tile" type="button" data-lightbox-src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Encontro com Parceiros" data-lightbox-meta="Instituições e comunidade">
-          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Encontro com Parceiros" loading="lazy">
-          <span><small>Parcerias</small><strong>Comunidade</strong></span>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic3.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic3.jpeg" alt="Formação Profissional" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic4.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic4.jpeg" alt="Fórum de Juventude e Cidadania" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic5.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic5.jpeg" alt="Encontro com Parceiros" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic6.jpeg" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/ed1-pic6.jpeg" alt="Sessão de Empregabilidade" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/foto.jpeg" alt="Dinâmica de Grupo" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/pessoas2.jpeg" alt="Aprendizagem Digital" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/pessoas4.jpeg" alt="Juventude em Conversa" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/palco2.jpeg" alt="Networking Real" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/palco3.jpeg" alt="Inteligência Emocional" loading="lazy">
+        </button>
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+          <img src="assets/images/negocio2.jpeg" alt="Educação Financeira" loading="lazy">
         </button>
       </div>
     </div>
   </section>
-
-  <section class="gallery-listing" id="galeria" aria-labelledby="gallery-listing-title">
-    <div class="container">
-      <div class="gallery-section-head gallery-section-head--split">
-        <div>
-          <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Arquivo visual</p>
-          <h2 class="section-title" id="gallery-listing-title" data-reveal>Todos os momentos</h2>
-        </div>
-
-        <div class="gallery-filters" role="list" aria-label="Filtrar galeria" data-reveal>
-          <button type="button" class="is-active" data-filter="all">Todos</button>
-          <button type="button" data-filter="palestras">Palestras</button>
-          <button type="button" data-filter="workshops">Workshops</button>
-          <button type="button" data-filter="formacoes">Formações</button>
-          <button type="button" data-filter="foruns">Fóruns</button>
-          <button type="button" data-filter="parcerias">Parcerias</button>
-        </div>
-      </div>
-
-      <div class="gallery-grid" data-gallery-grid>
-        <article class="gallery-card" data-gallery-item data-category="palestras">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Palestra de Liderança Juvenil" data-lightbox-meta="Huambo · 2025">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Palestra de Liderança Juvenil" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Palestras</span>
-              <strong>Palestra de Liderança Juvenil</strong>
-              <small>Huambo · 2025</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="workshops">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Workshop de Comunicação e Oratória" data-lightbox-meta="Formação prática">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Workshop de Comunicação e Oratória" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Workshops</span>
-              <strong>Workshop de Comunicação e Oratória</strong>
-              <small>Formação prática</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="formacoes">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Formação Profissional" data-lightbox-meta="Competências para o mercado">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Formação Profissional" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Formacoes</span>
-              <strong>Formação Profissional</strong>
-              <small>Competências para o mercado</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="foruns">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Fórum de Juventude e Cidadania" data-lightbox-meta="Debate e participação">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Fórum de Juventude e Cidadania" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Foruns</span>
-              <strong>Fórum de Juventude e Cidadania</strong>
-              <small>Debate e participação</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="parcerias">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Encontro com Parceiros" data-lightbox-meta="Instituições e comunidade">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Encontro com Parceiros" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Parcerias</span>
-              <strong>Encontro com Parceiros</strong>
-              <small>Instituições e comunidade</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="palestras">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Sessão de Empregabilidade" data-lightbox-meta="Preparação para oportunidades">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Sessão de Empregabilidade" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Palestras</span>
-              <strong>Sessão de Empregabilidade</strong>
-              <small>Preparação para oportunidades</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="workshops">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Dinâmica de Grupo" data-lightbox-meta="Aprender fazendo">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Dinâmica de Grupo" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Workshops</span>
-              <strong>Dinâmica de Grupo</strong>
-              <small>Aprender fazendo</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="formacoes">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Aprendizagem Digital" data-lightbox-meta="Ferramentas e futuro">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Aprendizagem Digital" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Formacoes</span>
-              <strong>Aprendizagem Digital</strong>
-              <small>Ferramentas e futuro</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="foruns">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Juventude em Conversa" data-lightbox-meta="Ideias para Angola">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Juventude em Conversa" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Foruns</span>
-              <strong>Juventude em Conversa</strong>
-              <small>Ideias para Angola</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="parcerias">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Networking Real" data-lightbox-meta="Ligação entre jovens e instituições">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Networking Real" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Parcerias</span>
-              <strong>Networking Real</strong>
-              <small>Ligação entre jovens e instituições</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="palestras">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Inteligência Emocional" data-lightbox-meta="Formação humana">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Inteligência Emocional" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Palestras</span>
-              <strong>Inteligência Emocional</strong>
-              <small>Formação humana</small>
-            </span>
-          </button>
-        </article>
-        <article class="gallery-card" data-gallery-item data-category="formacoes">
-          <button class="gallery-card__button" type="button" data-lightbox-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&h=1000&q=82" data-lightbox-title="Educação Financeira" data-lightbox-meta="Decisões com responsabilidade">
-            <span class="gallery-card__image">
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&h=1000&q=82" alt="Educação Financeira" loading="lazy">
-            </span>
-            <span class="gallery-card__content">
-              <span class="gallery-card__tag">Formacoes</span>
-              <strong>Educação Financeira</strong>
-              <small>Decisões com responsabilidade</small>
-            </span>
-          </button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="gallery-cta" aria-label="Chamada para contacto">
-    <div class="container">
-      <div class="gallery-cta__box" data-reveal>
-        <p class="eyebrow"><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Próximos momentos</p>
-        <h2>O próximo registo pode ser da tua escola, instituição ou comunidade.</h2>
-        <a href="index.html#contacto" class="btn btn-primary">Entrar em contacto</a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <div class="lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Imagem da galeria">
   <button class="lightbox__close" type="button" aria-label="Fechar imagem">×</button>
   <figure class="lightbox__figure">
     <img src="" alt="">
-    <figcaption>
-      <strong></strong>
-      <span></span>
-    </figcaption>
   </figure>
 </div>
 

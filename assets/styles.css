@@ -15,7 +15,7 @@
   /* tipografia */
   --font-display: "Fraunces", serif;
   --font-body: "Manrope", sans-serif;
-  --fs-h1: clamp(2.75rem, 1.6rem + 5vw, 6rem);
+  --fs-h1: clamp(2.75rem, a1.6rem + 5vw, 6rem);
   --fs-h2: clamp(2rem, 1.5rem + 2vw, 3.4rem);
   --fs-h3: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   --fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
@@ -762,415 +762,277 @@ body.nav-open {
 
 
 /* ============================================
-   MOTION + UNSPLASH PATCH v4.1
-   Suporte visual para GSAP e imagens remotas Unsplash
+   PORQUÊ — Parallax Impact Gallery v1
+   Opção 3: frases grandes + imagens flutuantes + profundidade
    ============================================ */
 
-/* Corrige typo que vinha no CSS original */
-:root {
-  --fs-h1: clamp(2.75rem, 1.6rem + 5vw, 6rem);
-}
-
-/* Acessibilidade do texto oculto no botão hamburger */
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0 0 0 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* Imagens de exemplo: deixam o preview mais consistente */
-.hero-media img,
-.value-image img,
-.slide-media img {
-  background: var(--bg-elevated);
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-media img {
-  filter: saturate(.86) contrast(1.06) brightness(.78);
-}
-
-.value-image img,
-.slide-media img {
-  filter: saturate(.88) contrast(1.04) brightness(.84);
-}
-
-/* Suporte de motion */
-.hero-title .word {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-
-.hero-title .word span {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
-.hero .eyebrow-light,
-.hero-sub,
-.hero-actions,
-.hero-bottom-row,
-.scroll-cue,
-[data-reveal],
-.value-card,
-.slide-card,
-.slide-media,
-.slide-panel {
-  will-change: transform, opacity;
-}
-
-.hero-bottom-row {
-  overflow: hidden;
-}
-
-.value-card,
-.slide-card {
-  transform-origin: center bottom;
-}
-
-.value-image img,
-.slide-media img,
-.hero-media img {
-  will-change: transform;
-}
-
-/* Mantém o menu mobile sólido quando abre */
-body.nav-open {
-  overflow: hidden;
-}
-
-.site-header {
-  z-index: 1000;
-}
-
-.site-header.scrolled,
-.site-header.menu-open {
-  background: rgba(15, 11, 7, .94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-color: rgba(244, 236, 221, .14);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, .25);
-}
-
-.header-inner {
-  position: relative;
-  z-index: 1020;
-}
-
-.nav-toggle {
-  position: relative;
-  z-index: 1030;
-}
-
-.nav-toggle span:not(.sr-only) {
-  background: currentColor;
-}
-
-.nav-mobile {
-  z-index: 1010;
-}
-
-.nav-mobile.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-title .word span,
-  .hero .eyebrow-light,
-  .hero-sub,
-  .hero-actions,
-  .hero-bottom-row,
-  .scroll-cue,
-  [data-reveal],
-  .value-card,
-  .slide-card,
-  .slide-media,
-  .slide-panel {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* ============================================
-   A NOSSA HISTÓRIA — Awwwards-inspired upgrade
-   Referências: texture + collage + parallax/light grid
-   ============================================ */
-
-.manifesto.manifesto--enhanced {
+.porque.porque--parallax {
   position: relative;
   overflow: clip;
   isolation: isolate;
-  padding-block: var(--space-section);
-  background:
-    radial-gradient(circle at 78% 20%, rgba(201,151,46,.13), transparent 34%),
-    linear-gradient(180deg, #140f08 0%, #0f0b07 100%);
-}
-.manifesto--enhanced .container {
-  position: relative;
-  z-index: 2;
+  padding-block: clamp(5.5rem, 10vw, 12rem);
+  min-height: 100vh;
+  background: #0f0b07;
 }
 
-.manifesto__bg,
-.manifesto__bg img {
+.porque-parallax__bg,
+.porque-parallax__bg img,
+.porque-parallax__shade,
+.porque-parallax__grain,
+.porque-parallax__grid {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+}
+
+.porque-parallax__bg {
+  z-index: 0;
+  opacity: .20;
+}
+
+.porque-parallax__bg img {
   width: 100%;
   height: 100%;
-}
-
-.manifesto__bg {
-  z-index: 0;
-  opacity: .22;
-}
-
-.manifesto__bg img {
-  display: block;
   object-fit: cover;
-  object-position: center center;
-  filter: grayscale(.1) sepia(.08) saturate(.85) contrast(1.02);
-  transform: scale(1.06);
+  filter: grayscale(.08) saturate(.78) contrast(1.08) brightness(.62);
+  transform: scale(1.08);
 }
 
-.manifesto__shade {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.porque-parallax__shade {
+  z-index: 1;
   background:
-    linear-gradient(90deg, rgba(15,11,7,.96) 0%, rgba(15,11,7,.84) 40%, rgba(15,11,7,.72) 70%, rgba(15,11,7,.92) 100%),
-    radial-gradient(circle at 78% 24%, rgba(201,151,46,.16), transparent 30%);
+    linear-gradient(180deg, rgba(15,11,7,.96) 0%, rgba(15,11,7,.74) 42%, rgba(15,11,7,.94) 100%),
+    radial-gradient(circle at 76% 22%, rgba(201,151,46,.18), transparent 34%),
+    radial-gradient(circle at 18% 76%, rgba(232,200,119,.10), transparent 30%);
 }
 
-.manifesto__grain {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: .16;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.45'/%3E%3C/svg%3E");
+.porque-parallax__grain {
+  z-index: 2;
+  opacity: .18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.50'/%3E%3C/svg%3E");
 }
 
-.manifesto__grid {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: .08;
+.porque-parallax__grid {
+  z-index: 2;
+  opacity: .10;
   background-image:
-    linear-gradient(rgba(72, 50, 17, .28) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(72, 50, 17, .22) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(circle at 74% 42%, black 0%, rgba(0,0,0,.75) 42%, transparent 82%);
+    linear-gradient(rgba(244,236,221,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,236,221,.10) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: radial-gradient(circle at 50% 45%, black 0%, rgba(0,0,0,.70) 48%, transparent 88%);
 }
 
-.manifesto__orb {
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-  z-index: 1;
-  filter: blur(70px);
-}
-
-.manifesto__orb--a {
-  width: 320px;
-  height: 320px;
-  right: -5%;
-  top: 12%;
-  background: radial-gradient(circle, rgba(201,151,46,.16), transparent 70%);
-}
-
-.manifesto__orb--b {
-  width: 260px;
-  height: 260px;
-  left: -6%;
-  bottom: 10%;
-  background: radial-gradient(circle, rgba(166,127,39,.10), transparent 70%);
-}
-
-.manifesto__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
-  gap: clamp(2rem, 4vw, 4.5rem);
-  align-items: start;
-}
-
-.manifesto__content {
+.porque-parallax__head,
+.porque-parallax__stage,
+.porque-parallax__banner {
   position: relative;
+  z-index: 3;
+}
+
+.porque-parallax__head {
+  margin-bottom: clamp(3rem, 7vw, 7rem);
+}
+
+.porque--parallax .section-title {
+  max-width: 10ch;
+  font-size: clamp(2.4rem, 7vw, 6.6rem);
+  line-height: .9;
+  letter-spacing: -.055em;
+}
+
+.porque-parallax__intro {
+  max-width: 47ch;
+  color: rgba(244,236,221,.72);
+  margin-top: 1.25rem;
+}
+
+.porque-parallax__stage {
+  display: grid;
+  gap: clamp(4rem, 9vw, 9rem);
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding-inline: var(--pad-inline);
+}
+
+.impact-row {
+  position: relative;
+  min-height: clamp(420px, 58vh, 680px);
+  display: grid;
+  align-items: center;
+  isolation: isolate;
+}
+
+.impact-row--left {
+  grid-template-columns: minmax(220px, .72fr) minmax(0, 1fr);
+}
+
+.impact-row--right {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .72fr);
+}
+
+.impact-row--center {
+  grid-template-columns: minmax(220px, .55fr) minmax(0, .85fr) minmax(220px, .55fr);
+}
+
+.impact-row--right .impact-row__media {
+  grid-column: 2;
+}
+
+.impact-row--right .impact-row__text {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  text-align: right;
+}
+
+.impact-row--center .impact-row__media {
+  grid-column: 1;
+}
+
+.impact-row--center .impact-row__text {
+  grid-column: 2 / span 2;
+}
+
+.impact-row__media {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 5;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(244,236,221,.13);
+  background: var(--bg-elevated);
+  box-shadow: 0 28px 90px rgba(0,0,0,.34);
+  transform-origin: center;
   z-index: 2;
 }
 
-.manifesto--enhanced .section-title {
-  max-width: 14ch;
+.impact-row__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(15,11,7,.62) 100%),
+    radial-gradient(circle at 82% 18%, rgba(201,151,46,.24), transparent 34%);
+  pointer-events: none;
 }
 
-.manifesto--enhanced .manifesto-text {
-  max-width: 61ch;
-  margin-bottom: 2rem;
-}
-
-.manifesto--enhanced .manifesto-quote {
-  position: relative;
-  max-width: 52ch;
-  margin-bottom: 2.25rem;
-  padding: 1.1rem 0 1.1rem 1.5rem;
-  border-left: 2px solid var(--gold);
-  background: linear-gradient(90deg, rgba(201,151,46,.06), transparent 60%);
-}
-
-.manifesto__art {
-  position: relative;
-  min-height: 640px;
-  padding-top: 1.25rem;
-}
-
-.manifesto-card,
-.manifesto-chip--photo {
-  overflow: hidden;
-  border-radius: 28px;
-  border: 1px solid rgba(72, 50, 17, .10);
-  background: #ddd;
-  box-shadow: 0 22px 60px rgba(38, 24, 10, .10);
-}
-
-.manifesto-card img,
-.manifesto-chip--photo img {
-  display: block;
+.impact-row__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(.86) contrast(1.06) brightness(.82);
+  transform: scale(1.08);
 }
 
-.manifesto-card--main {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(100%, 480px);
-  aspect-ratio: 4 / 5;
-  transform: rotate(-2.2deg);
-}
+.impact-row__media--a { transform: rotate(-4deg); }
+.impact-row__media--b { transform: rotate(5deg); justify-self: end; }
+.impact-row__media--c { transform: rotate(3deg); width: min(100%, 300px); }
+.impact-row__media--d { transform: rotate(-5deg); justify-self: end; width: min(100%, 330px); }
+.impact-row__media--e { transform: rotate(-2deg); width: min(100%, 300px); }
 
-.manifesto-card--small {
-  position: absolute;
-  left: 0;
-  bottom: 90px;
-  width: min(52%, 250px);
-  aspect-ratio: 4 / 5;
-  transform: rotate(5deg);
-}
-
-.manifesto-chip {
-  position: absolute;
-  display: inline-flex;
-  flex-direction: column;
-  gap: .2rem;
-  padding: .95rem 1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(72, 50, 17, .10);
-  background: rgba(255,255,255,.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 18px 50px rgba(38, 24, 10, .08);
-}
-
-.manifesto-chip--quote {
-  right: 8%;
-  bottom: 16px;
-  max-width: 200px;
-}
-
-.manifesto-chip--quote span {
-  color: var(--muted);
-  font-size: .83rem;
-  letter-spacing: .03em;
-}
-
-.manifesto-chip--quote strong {
-  font-family: var(--font-display);
-  font-size: 1.22rem;
-  line-height: 1.06;
-  color: var(--ink);
-}
-
-.manifesto-chip--photo {
-  top: 44%;
-  left: 26px;
-  width: 96px;
-  aspect-ratio: 1;
-  padding: 0;
-  border-radius: 22px;
-  transform: rotate(-8deg);
-}
-
-.manifesto--enhanced .mv-split {
-  gap: 0;
+.impact-row__text {
   position: relative;
-  z-index: 2;
+  z-index: 4;
+  max-width: 780px;
+  padding: clamp(1rem, 3vw, 3rem);
 }
 
-@media (max-width: 1024px) {
-  .manifesto__layout {
+.impact-row__text span {
+  display: inline-flex;
+  margin-bottom: clamp(.85rem, 1.6vw, 1.4rem);
+  color: var(--gold-soft);
+  font-size: .82rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+
+.impact-row__text h3 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  line-height: .86;
+  letter-spacing: -.07em;
+  text-wrap: balance;
+}
+
+.impact-row__text p {
+  max-width: 42ch;
+  color: rgba(244,236,221,.70);
+  font-size: clamp(1rem, .95rem + .35vw, 1.22rem);
+}
+
+.impact-row--right .impact-row__text p {
+  margin-left: auto;
+}
+
+.porque-parallax__banner {
+  margin-top: clamp(3rem, 8vw, 7rem);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(244,236,221,.12);
+}
+
+@media (max-width: 980px) {
+  .porque--parallax .section-title {
+    font-size: clamp(2.4rem, 13vw, 5rem);
+  }
+
+  .impact-row,
+  .impact-row--left,
+  .impact-row--right,
+  .impact-row--center {
+    min-height: auto;
     grid-template-columns: 1fr;
+    gap: 1.4rem;
   }
 
-  .manifesto__art {
-    min-height: 520px;
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto;
+  .impact-row--right .impact-row__media,
+  .impact-row--right .impact-row__text,
+  .impact-row--center .impact-row__media,
+  .impact-row--center .impact-row__text {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
+    text-align: left;
   }
 
-  .manifesto-card--main {
-    width: min(100%, 420px);
-  }
-}
-
-@media (max-width: 720px) {
-  .manifesto.manifesto--enhanced {
-    padding-block: clamp(4rem, 12vw, 6rem);
-  }
-
-  .manifesto__layout {
-    gap: 2rem;
+  .impact-row__media,
+  .impact-row__media--a,
+  .impact-row__media--b,
+  .impact-row__media--c,
+  .impact-row__media--d,
+  .impact-row__media--e {
+    width: min(100%, 380px);
+    transform: none;
+    justify-self: start;
   }
 
-  .manifesto__art {
-    min-height: 420px;
+  .impact-row__text {
+    padding: 0;
+  }
+
+  .impact-row__text h3 {
+    font-size: clamp(2.2rem, 13vw, 4.2rem);
+    max-width: 13ch;
+  }
+
+  .impact-row--right .impact-row__text p {
     margin-left: 0;
   }
+}
 
-  .manifesto-card--main {
-    width: min(100%, 320px);
-    right: 0;
-    left: auto;
+@media (max-width: 620px) {
+  .porque.porque--parallax {
+    padding-block: 4.5rem;
   }
 
-  .manifesto-card--small {
-    width: 42%;
-    min-width: 132px;
-    bottom: 76px;
+  .porque-parallax__stage {
+    gap: 4rem;
   }
 
-  .manifesto-chip--photo {
-    width: 78px;
-    left: 8px;
-    top: 48%;
-  }
-
-  .manifesto-chip--quote {
-    right: 0;
-    max-width: 170px;
+  .impact-row__media {
+    border-radius: 22px;
+    aspect-ratio: 16 / 11;
   }
 }

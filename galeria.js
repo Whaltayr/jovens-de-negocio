@@ -1,34 +1,22 @@
 // ============================================
-// GALERIA — JS principal
-// Filtros, lightbox, GSAP e menu mobile
+// JOVENS DO VALOR — Galeria limpa
+// Header responsivo + filtro por edição + lightbox
 // ============================================
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-
 let lenisInstance = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (hasGSAP) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.defaults({ ease: 'power3.out' });
-  }
-
   initSmoothScroll();
   initHeader();
-  initGalleryHero();
-  initGalleryReveals();
-  initGalleryFilters();
+  initEditionFilter();
   initLightbox();
 });
 
 function initSmoothScroll() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
   if (!prefersReducedMotion && typeof window.Lenis !== 'undefined') {
     lenisInstance = new Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.9 });
 
-    if (hasGSAP) {
-      lenisInstance.on('scroll', ScrollTrigger.update);
+    if (typeof window.gsap !== 'undefined') {
       gsap.ticker.add((time) => lenisInstance.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
     } else {
@@ -40,10 +28,11 @@ function initSmoothScroll() {
     }
   }
 
-  anchorLinks.forEach((link) => {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (!href || href === '#') return;
+
       const target = document.querySelector(href);
       if (!target) return;
 
@@ -60,6 +49,7 @@ function initHeader() {
   const header = document.getElementById('topo');
   const toggle = document.getElementById('navToggle');
   const mobileNav = document.getElementById('navMobile');
+
   if (!header) return;
 
   const setHeaderState = () => {
@@ -74,13 +64,13 @@ function initHeader() {
 
   if (!toggle || !mobileNav) return;
 
-  mobileNav.setAttribute('aria-hidden', 'true');
   const sr = toggle.querySelector('.sr-only');
 
   const openMenu = () => {
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Fechar menu');
     if (sr) sr.textContent = 'Fechar menu';
+
     mobileNav.classList.add('open');
     mobileNav.setAttribute('aria-hidden', 'false');
     header.classList.add('menu-open', 'scrolled');
@@ -92,6 +82,7 @@ function initHeader() {
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menu');
     if (sr) sr.textContent = 'Abrir menu';
+
     mobileNav.classList.remove('open');
     mobileNav.setAttribute('aria-hidden', 'true');
     header.classList.remove('menu-open');
@@ -106,10 +97,15 @@ function initHeader() {
     isOpen ? closeMenu(false) : openMenu();
   });
 
-  mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => closeMenu(false)));
+  mobileNav.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => closeMenu(false));
+  });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+    if (e.key === 'Escape') {
+      closeMenu(true);
+      closeLightbox();
+    }
   });
 }
 
@@ -140,132 +136,62 @@ function closeMobileNav(returnFocus = false) {
   if (returnFocus && toggle) toggle.focus({ preventScroll: true });
 }
 
-function initGalleryHero() {
-  const title = document.querySelector('[data-split-gallery]');
-  if (!title) return;
+function initEditionFilter() {
+  const buttons = document.querySelectorAll('[data-edition-filter]');
+  const cards = document.querySelectorAll('[data-edition]');
 
-  if (!title.dataset.splitted) {
-    title.innerHTML = title.textContent.trim().split(/\s+/)
-      .map((word) => `<span class="word"><span>${word}</span></span>`)
-      .join(' ');
-    title.dataset.splitted = 'true';
-  }
+  if (!buttons.length || !cards.length) return;
 
-  if (prefersReducedMotion || !hasGSAP) return;
-
-  const words = title.querySelectorAll('.word span');
-  const bg = document.querySelector('.gallery-hero__bg img');
-
-  gsap.set(words, { opacity: 0, yPercent: 110, x: -34 });
-  gsap.set('.gallery-hero .eyebrow, .gallery-hero__bottom, .gallery-stats', { opacity: 0, y: 24 });
-
-  const tl = gsap.timeline({ delay: .18 });
-  tl.to('.gallery-hero .eyebrow', { opacity: 1, y: 0, duration: .7 })
-    .to(words, { opacity: 1, yPercent: 0, x: 0, duration: .95, stagger: .045, ease: 'power4.out' }, '-=.35')
-    .to('.gallery-hero__bottom', { opacity: 1, y: 0, duration: .75 }, '-=.45')
-    .to('.gallery-stats', { opacity: 1, y: 0, duration: .75 }, '-=.45');
-
-  if (bg) {
-    gsap.to(bg, {
-      yPercent: 8,
-      scale: 1.14,
-      ease: 'none',
-      scrollTrigger: { trigger: '.gallery-hero', start: 'top top', end: 'bottom top', scrub: true }
+  const applyFilter = (edition) => {
+    cards.forEach((card) => {
+      card.classList.toggle('is-hidden', card.dataset.edition !== edition);
     });
-  }
-}
 
-function initGalleryReveals() {
-  const items = document.querySelectorAll('[data-reveal], .gallery-card, .featured-tile');
-  if (!items.length) return;
-
-  if (prefersReducedMotion || !hasGSAP) {
-    items.forEach((item) => {
-      item.style.opacity = 1;
-      item.style.transform = 'none';
+    buttons.forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.editionFilter === edition);
     });
-    return;
-  }
-
-  gsap.set(items, { opacity: 0, y: 34 });
-
-  ScrollTrigger.batch(items, {
-    start: 'top 86%',
-    onEnter: (batch) => gsap.to(batch, {
-      opacity: 1,
-      y: 0,
-      duration: .72,
-      stagger: .06,
-      overwrite: 'auto'
-    }),
-    once: true
-  });
-}
-
-function initGalleryFilters() {
-  const buttons = document.querySelectorAll('[data-filter]');
-  const items = document.querySelectorAll('[data-gallery-item]');
-  if (!buttons.length || !items.length) return;
+  };
 
   buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-
-      buttons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
-
-      items.forEach((item) => {
-        const match = filter === 'all' || item.dataset.category === filter;
-        item.classList.toggle('is-hidden', !match);
-      });
-
-      if (hasGSAP) {
-        const visible = Array.from(items).filter((item) => !item.classList.contains('is-hidden'));
-        gsap.fromTo(visible, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .45, stagger: .035 });
-        ScrollTrigger.refresh();
-      }
-    });
+    button.addEventListener('click', () => applyFilter(button.dataset.editionFilter));
   });
+
+  applyFilter(buttons[0].dataset.editionFilter);
 }
 
 function initLightbox() {
   const lightbox = document.getElementById('galleryLightbox');
   if (!lightbox) return;
 
-  const image = lightbox.querySelector('img');
-  const title = lightbox.querySelector('figcaption strong');
-  const meta = lightbox.querySelector('figcaption span');
-  const closeBtn = lightbox.querySelector('.lightbox__close');
-  const triggers = document.querySelectorAll('[data-lightbox-src]');
+  const img = lightbox.querySelector('img');
+  const close = lightbox.querySelector('.lightbox__close');
 
-  const open = (trigger) => {
-    image.src = trigger.dataset.lightboxSrc;
-    image.alt = trigger.dataset.lightboxTitle || 'Imagem da galeria';
-    title.textContent = trigger.dataset.lightboxTitle || '';
-    meta.textContent = trigger.dataset.lightboxMeta || '';
+  document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!img) return;
+      img.src = button.dataset.lightboxSrc;
+      img.alt = button.querySelector('img')?.alt || 'Imagem da galeria';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('nav-open');
+      close?.focus({ preventScroll: true });
+    });
+  });
 
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('lightbox-open');
-    if (lenisInstance) lenisInstance.stop();
-    closeBtn.focus({ preventScroll: true });
-  };
-
-  const close = () => {
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('lightbox-open');
-    if (lenisInstance) lenisInstance.start();
-    image.src = '';
-  };
-
-  triggers.forEach((trigger) => trigger.addEventListener('click', () => open(trigger)));
-  closeBtn.addEventListener('click', close);
+  close?.addEventListener('click', closeLightbox);
 
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) close();
+    if (e.target === lightbox) closeLightbox();
   });
+}
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
-  });
+function closeLightbox() {
+  const lightbox = document.getElementById('galleryLightbox');
+  if (!lightbox || !lightbox.classList.contains('is-open')) return;
+
+  lightbox.classList.remove('is-open');
+  lightbox.setAttribute('aria-hidden', 'true');
+
+  const menuOpen = document.getElementById('navToggle')?.getAttribute('aria-expanded') === 'true';
+  if (!menuOpen) document.body.classList.remove('nav-open');
 }

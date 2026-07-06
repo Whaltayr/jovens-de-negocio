@@ -1,1 +1,0 @@
-Opção 3 — Parallax Impact Gallery. Troca a secção PORQUÊ, cola o CSS no fim de styles.css e adiciona initPorqueParallax() ao script ou usa script_porque_parallax_v5.js.
