@@ -1555,3 +1555,504 @@ body.nav-open footer {
     display: none !important;
   }
 }
+
+
+/* ============================================
+   JOVENS DO VALOR — SIGNATURE SYSTEM V2
+   Purpose: identity, editorial rhythm and interaction.
+   ============================================ */
+
+:root {
+  --fs-h1: clamp(2.75rem, 1.6rem + 5vw, 6rem);
+  --space-section: calc(clamp(4.5rem, 3.5rem + 5vw, 9rem) + 3rem);
+  --signature-line: rgba(232, 200, 119, .22);
+  --signature-glow: rgba(201, 151, 46, .18);
+  --signature-cream: #f4ecdd;
+}
+
+/* Fine-grain material, not a contrast overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: .032;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/* Editorial chapter numbers: gives every section a shared identity */
+main > section[data-chapter] {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section[data-chapter]::before {
+  content: attr(data-chapter);
+  position: absolute;
+  top: clamp(2rem, 7vw, 6rem);
+  right: max(var(--pad-inline), calc((100vw - 1240px) / 2));
+  z-index: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232, 200, 119, .16);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 14vw, 12rem);
+  font-weight: 500;
+  line-height: .75;
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+
+main > section[data-chapter] > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section heading signature */
+.section-title {
+  position: relative;
+  padding-bottom: 1.15rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: clamp(72px, 10vw, 136px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-soft), rgba(232, 200, 119, 0));
+  transform-origin: left;
+}
+
+/* HERO SIGNATURE — brand mark becomes an actual visual system */
+.hero-signature {
+  position: absolute;
+  right: clamp(1.25rem, 6vw, 6rem);
+  top: 50%;
+  z-index: 2;
+  width: clamp(190px, 25vw, 340px);
+  aspect-ratio: 1;
+  transform: translateY(-44%);
+  display: grid;
+  place-items: center;
+  color: var(--gold-soft);
+  pointer-events: none;
+}
+
+.hero-signature::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 200, 119, .12), transparent 68%);
+  filter: blur(18px);
+}
+
+.hero-signature__orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-signature__ring {
+  fill: none;
+  stroke: url(#signatureGold);
+  stroke-width: 1.2;
+  transform-box: fill-box;
+  transform-origin: center;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.hero-signature__ring--outer {
+  transform: rotate(45deg);
+}
+
+.hero-signature__ring--inner {
+  transform: rotate(-45deg);
+  opacity: .72;
+}
+
+.hero-signature__axis {
+  fill: none;
+  stroke: rgba(244, 236, 221, .16);
+  stroke-width: .7;
+  stroke-dasharray: .015 .035;
+}
+
+.hero-signature__core {
+  position: relative;
+  width: clamp(52px, 7vw, 76px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(232, 200, 119, .32);
+  transform: rotate(45deg);
+  background: rgba(15, 11, 7, .44);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 70px rgba(201, 151, 46, .18),
+    inset 0 0 0 1px rgba(244, 236, 221, .04);
+}
+
+.hero-signature__core svg {
+  width: 54%;
+  transform: rotate(-45deg);
+}
+
+.hero-signature__meta {
+  position: absolute;
+  right: -1rem;
+  bottom: 8%;
+  color: rgba(244, 236, 221, .54);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  writing-mode: vertical-rl;
+}
+
+/* Kinetic ribbon: content-led, not decorative filler */
+.brand-ribbon {
+  overflow: hidden;
+  border-block: 1px solid rgba(244, 236, 221, .11);
+  background:
+    linear-gradient(90deg, rgba(201, 151, 46, .06), transparent 35%, rgba(201, 151, 46, .06)),
+    var(--bg-elevated);
+}
+
+.brand-ribbon__viewport {
+  overflow: hidden;
+  padding-block: clamp(1.15rem, 2.2vw, 1.65rem);
+}
+
+.brand-ribbon__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 3.2rem);
+  width: max-content;
+  will-change: transform;
+}
+
+.brand-ribbon__track span {
+  color: rgba(244, 236, 221, .86);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 2.2rem);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.brand-ribbon__track i {
+  color: var(--gold);
+  font-size: .72rem;
+  font-style: normal;
+  opacity: .78;
+}
+
+/* Interactive light that follows pointer on selected surfaces */
+.signature-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.signature-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(
+      420px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgba(232, 200, 119, .14),
+      transparent 46%
+    );
+  transition: opacity .3s var(--ease);
+}
+
+.signature-surface:hover::before {
+  opacity: 1;
+}
+
+/* Premium light sweep on important actions */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -45%;
+  width: 28%;
+  transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.48), transparent);
+  opacity: 0;
+  transition: left .7s var(--ease), opacity .25s ease;
+}
+
+.btn-primary:hover::after {
+  left: 125%;
+  opacity: .9;
+}
+
+/* ============================================
+   THIRD EDITION — actual signature section
+   ============================================ */
+
+.next-edition-v2 {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(680px, 90vh, 900px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: var(--space-section);
+  border-block: 1px solid rgba(244, 236, 221, .12);
+  background: #0f0b07;
+}
+
+.next-edition-v2__media,
+.next-edition-v2__media img,
+.next-edition-v2__veil,
+.next-edition-v2__mesh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.next-edition-v2__media {
+  z-index: 0;
+}
+
+.next-edition-v2__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.72) contrast(1.08) brightness(.5);
+  transform: scale(1.1);
+}
+
+.next-edition-v2__veil {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(15,11,7,.98) 0%, rgba(15,11,7,.82) 42%, rgba(15,11,7,.48) 100%),
+    linear-gradient(0deg, rgba(15,11,7,.96) 0%, transparent 56%, rgba(15,11,7,.84) 100%),
+    radial-gradient(circle at 78% 28%, rgba(201,151,46,.24), transparent 33rem);
+}
+
+.next-edition-v2__mesh {
+  z-index: 2;
+  opacity: .15;
+  background-image:
+    linear-gradient(rgba(244,236,221,.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,236,221,.12) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(90deg, transparent, black 48%, black);
+}
+
+.next-edition-v2__number {
+  position: absolute;
+  right: clamp(-1rem, 2vw, 3rem);
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232, 200, 119, .24);
+  font-family: var(--font-display);
+  font-size: clamp(16rem, 34vw, 35rem);
+  line-height: .65;
+  letter-spacing: -.11em;
+  pointer-events: none;
+  opacity: .82;
+}
+
+.next-edition-v2__inner {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .58fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+}
+
+.next-edition-v2__title {
+  max-width: 10ch;
+  margin-bottom: 1.4rem;
+  font-size: clamp(3.2rem, 8vw, 8.4rem);
+  line-height: .86;
+  letter-spacing: -.07em;
+  text-wrap: balance;
+}
+
+.next-edition-v2__lead {
+  max-width: 52ch;
+  color: rgba(244, 236, 221, .75);
+  font-size: clamp(1.04rem, 1rem + .35vw, 1.24rem);
+}
+
+.next-edition-v2__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.55rem;
+}
+
+.next-edition-v2__tags span {
+  padding: .55rem .9rem;
+  border: 1px solid rgba(244,236,221,.15);
+  border-radius: 999px;
+  background: rgba(244,236,221,.045);
+  color: rgba(244,236,221,.74);
+  font-size: .82rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.next-edition-v2__panel {
+  padding: clamp(1.5rem, 3.4vw, 2.5rem);
+  border: 1px solid rgba(244, 236, 221, .16);
+  border-radius: calc(var(--radius) + 16px);
+  background:
+    linear-gradient(180deg, rgba(244,236,221,.085), rgba(244,236,221,.035)),
+    rgba(15,11,7,.62);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow:
+    0 34px 110px rgba(0,0,0,.44),
+    inset 0 1px 0 rgba(244,236,221,.09);
+}
+
+.next-edition-v2__status {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: 2.4rem;
+  color: rgba(244,236,221,.66);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.next-edition-v2__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  box-shadow: 0 0 0 0 rgba(232, 200, 119, .45);
+  animation: nextEditionPulse 2.2s ease-out infinite;
+}
+
+@keyframes nextEditionPulse {
+  0% { box-shadow: 0 0 0 0 rgba(232,200,119,.44); }
+  70% { box-shadow: 0 0 0 11px rgba(232,200,119,0); }
+  100% { box-shadow: 0 0 0 0 rgba(232,200,119,0); }
+}
+
+.next-edition-v2__panel-kicker {
+  margin-bottom: .75rem;
+  color: var(--gold-soft);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.next-edition-v2__panel h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  line-height: 1;
+}
+
+.next-edition-v2__panel > p:not(.next-edition-v2__panel-kicker) {
+  margin-bottom: 1.6rem;
+  color: rgba(244,236,221,.68);
+}
+
+.next-edition-v2__cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.next-edition-v2__cta span {
+  font-size: 1.15rem;
+}
+
+/* Motion support */
+.hero-signature,
+.next-edition-v2__copy,
+.next-edition-v2__panel,
+.next-edition-v2__number,
+.brand-ribbon__track {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 980px) {
+  .hero-signature {
+    opacity: .5;
+    right: -4rem;
+  }
+
+  .next-edition-v2__inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .next-edition-v2__panel {
+    max-width: 520px;
+  }
+
+  .next-edition-v2__number {
+    right: -6rem;
+    top: 28%;
+  }
+}
+
+@media (max-width: 720px) {
+  main > section[data-chapter]::before {
+    top: 1.5rem;
+    right: .75rem;
+    font-size: clamp(4rem, 24vw, 7rem);
+  }
+
+  .hero-signature {
+    width: 190px;
+    right: -5.5rem;
+    top: 37%;
+    opacity: .38;
+  }
+
+  .hero-signature__meta {
+    display: none;
+  }
+
+  .next-edition-v2 {
+    min-height: auto;
+  }
+
+  .next-edition-v2__title {
+    font-size: clamp(3rem, 15vw, 5.4rem);
+  }
+
+  .next-edition-v2__number {
+    font-size: 18rem;
+    opacity: .45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .next-edition-v2__pulse {
+    animation: none;
+  }
+}

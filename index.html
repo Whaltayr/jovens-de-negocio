@@ -81,13 +81,53 @@
       </div>
     </div>
 
+
+    <div class="hero-signature" aria-hidden="true">
+      <svg class="hero-signature__orbit" viewBox="0 0 320 320">
+        <defs>
+          <linearGradient id="signatureGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8c877" stop-opacity=".95"/>
+            <stop offset="55%" stop-color="#c9972e" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#f4ecdd" stop-opacity=".18"/>
+          </linearGradient>
+        </defs>
+        <rect class="hero-signature__ring hero-signature__ring--outer" x="52" y="52" width="216" height="216" rx="8" pathLength="1"/>
+        <rect class="hero-signature__ring hero-signature__ring--inner" x="91" y="91" width="138" height="138" rx="5" pathLength="1"/>
+        <path class="hero-signature__axis" d="M160 18V302M18 160H302" pathLength="1"/>
+      </svg>
+
+      <div class="hero-signature__core">
+        <svg viewBox="0 0 40 40"><use href="#mark"></use></svg>
+      </div>
+
+      <span class="hero-signature__meta">HUAMBO · ANGOLA · 2025</span>
+    </div>
+
     <a href="#manifesto" class="scroll-cue" aria-label="Descer para a próxima secção">
       <span></span>
     </a>
   </section>
 
+
+  <section class="brand-ribbon" aria-label="Princípios do Projeto Jovens do Valor">
+    <div class="brand-ribbon__viewport">
+      <div class="brand-ribbon__track">
+        <span>Liderança</span><i>◆</i>
+        <span>Ética</span><i>◆</i>
+        <span>Empregabilidade</span><i>◆</i>
+        <span>Cidadania</span><i>◆</i>
+        <span>Inovação Social</span><i>◆</i>
+        <span>Liderança</span><i>◆</i>
+        <span>Ética</span><i>◆</i>
+        <span>Empregabilidade</span><i>◆</i>
+        <span>Cidadania</span><i>◆</i>
+        <span>Inovação Social</span><i>◆</i>
+      </div>
+    </div>
+  </section>
+
   <!-- MANIFESTO -->
-  <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+  <section class="manifesto" data-chapter="01" id="manifesto" aria-labelledby="manifesto-title">
     <div class="container">
       <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>A nossa história</p>
       <h2 class="section-title" id="manifesto-title" data-reveal>Nascido no Huambo, para formar quem vai liderar Angola</h2>
@@ -112,7 +152,7 @@
   </section>
 
   <!-- VALORES -->
-  <section class="valores" id="valores" aria-labelledby="valores-title">
+  <section class="valores" data-chapter="02" id="valores" aria-labelledby="valores-title">
     <div class="container">
       <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>O que nos guia</p>
       <h2 class="section-title" id="valores-title" data-reveal>Doze valores, um só compromisso</h2>
@@ -253,7 +293,7 @@
   </section>
 
   <!-- ÁREAS DE ATUAÇÃO -->
-  <section class="atuacao" id="atuacao" aria-labelledby="atuacao-title">
+  <section class="atuacao" data-chapter="03" id="atuacao" aria-labelledby="atuacao-title">
     <div class="container atuacao-head">
       <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Como atuamos</p>
       <h2 class="section-title" id="atuacao-title" data-reveal>Três formas de gerar valor</h2>
@@ -318,7 +358,7 @@
   </section>
 
   <!-- PORQUÊ ESCOLHER-NOS -->
-  <section class="porque porque--parallax" id="porque" aria-labelledby="porque-title">
+  <section class="porque porque--parallax" data-chapter="04" id="porque" aria-labelledby="porque-title">
     <div class="porque-parallax__bg" aria-hidden="true">
       <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&h=1200&q=82" alt="" loading="lazy">
     </div>
@@ -402,8 +442,68 @@
     </div>
   </section>
 
+
+  <!-- TERCEIRA EDIÇÃO — CTA PRINCIPAL -->
+  <section class="next-edition-v2" id="terceira-edicao" data-chapter="05" aria-labelledby="terceira-edicao-title">
+    <div class="next-edition-v2__media" aria-hidden="true">
+      <img src="assets/images/palco9.jpeg" alt="" loading="lazy">
+    </div>
+    <div class="next-edition-v2__veil" aria-hidden="true"></div>
+    <div class="next-edition-v2__mesh" aria-hidden="true"></div>
+<!-- 
+    <div class="next-edition-v2__number" aria-hidden="true">03</div> -->
+
+    <div class="container next-edition-v2__inner">
+      <div class="next-edition-v2__copy">
+        <p class="eyebrow eyebrow-light" data-reveal>
+          <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
+          Próxima edição
+        </p>
+
+        <h2 class="next-edition-v2__title" id="terceira-edicao-title" data-reveal>
+          A terceira edição começa agora.
+        </h2>
+
+        <p class="next-edition-v2__lead" data-reveal>
+          Uma nova experiência de formação, liderança e ligação entre jovens,
+          instituições e parceiros comprometidos com o futuro de Angola.
+        </p>
+
+        <div class="next-edition-v2__tags" data-reveal aria-label="Formatos previstos">
+          <span>Liderança</span>
+          <span>Empregabilidade</span>
+          <span>Networking</span>
+        </div>
+      </div>
+
+      <aside class="next-edition-v2__panel signature-surface" data-reveal aria-label="Participar na terceira edição">
+        <div class="next-edition-v2__status">
+          <span class="next-edition-v2__pulse"></span>
+          Em preparação
+        </div>
+
+        <p class="next-edition-v2__panel-kicker">03ª edição</p>
+        <h3>Quero participar ou tornar-me parceiro.</h3>
+        <p>
+          Fala diretamente com a organização para receber informações,
+          acompanhar as novidades ou apresentar uma parceria.
+        </p>
+
+        <a
+          href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor."
+          class="btn btn-primary next-edition-v2__cta magnetic"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar pelo WhatsApp
+          <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
   <!-- PARCEIROS -->
-  <section class="parceiros" aria-labelledby="parceiros-title">
+  <section class="parceiros" data-chapter="06" aria-labelledby="parceiros-title">
     <div class="container">
       <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Parceiros</p>
       <h2 class="section-title" id="parceiros-title" data-reveal>Quem caminha connosco</h2>
@@ -423,7 +523,7 @@
   </section>
 
   <!-- EXPLORAR MAIS -->
-  <section class="explorar" aria-label="Explorar mais">
+  <section class="explorar" data-chapter="07" aria-label="Explorar mais">
     <div class="container">
       <a href="sobre-programas.html" class="explorar-row" data-reveal>
         <span class="explorar-title">Sobre &amp; Programas</span>
@@ -482,4 +582,4 @@
 <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
 <script src="script.js"></script>
 </body>
-</html>
+</html> 

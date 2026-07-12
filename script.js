@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroMotion();
   initHeroParallax();
   initSectionMotion();
+  initSignatureSystem();
+  initInteractiveSurfaces();
+  initMagneticButtons();
   initSlider();
   initValueSlider();
 });
@@ -537,3 +540,229 @@ function initValueSlider() {
     progressFill: document.getElementById('valueProgressFill')
   });
 }
+
+// --------------------------------------------
+// Brand signature: hero orbit, kinetic ribbon and third-edition story
+// --------------------------------------------
+function initSignatureSystem() {
+  if (prefersReducedMotion || !hasGSAP) return;
+
+  const signature = document.querySelector('.hero-signature');
+  const outer = document.querySelector('.hero-signature__ring--outer');
+  const inner = document.querySelector('.hero-signature__ring--inner');
+  const core = document.querySelector('.hero-signature__core');
+
+  if (signature) {
+    const tl = gsap.timeline({ delay: 0.38 });
+
+    tl.fromTo(signature,
+      { opacity: 0, scale: .88, rotate: -8 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 1.1, ease: 'power4.out' }
+    );
+
+    if (outer && inner) {
+      tl.to([outer, inner], {
+        strokeDashoffset: 0,
+        duration: 1.35,
+        stagger: .14,
+        ease: 'power3.inOut'
+      }, '-=.88');
+
+      gsap.to(outer, {
+        rotate: '+=360',
+        duration: 32,
+        repeat: -1,
+        ease: 'none',
+        transformOrigin: '50% 50%'
+      });
+
+      gsap.to(inner, {
+        rotate: '-=360',
+        duration: 24,
+        repeat: -1,
+        ease: 'none',
+        transformOrigin: '50% 50%'
+      });
+    }
+
+    if (core) {
+      gsap.to(core, {
+        y: -8,
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+    }
+
+    gsap.to(signature, {
+      yPercent: 16,
+      opacity: .48,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
+
+  const ribbon = document.querySelector('.brand-ribbon__track');
+  if (ribbon) {
+    gsap.fromTo(ribbon,
+      { xPercent: 0 },
+      {
+        xPercent: -18,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.brand-ribbon',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      }
+    );
+  }
+
+  gsap.utils.toArray('main > section[data-chapter]').forEach((section) => {
+    gsap.fromTo(section,
+      { '--chapter-shift': '0px' },
+      {
+        '--chapter-shift': '34px',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      }
+    );
+  });
+
+  const nextSection = document.querySelector('.next-edition-v2');
+  if (nextSection) {
+    const bg = nextSection.querySelector('.next-edition-v2__media img');
+    const number = nextSection.querySelector('.next-edition-v2__number');
+    const copy = nextSection.querySelector('.next-edition-v2__copy');
+    const panel = nextSection.querySelector('.next-edition-v2__panel');
+
+    if (bg) {
+      gsap.fromTo(bg,
+        { scale: 1.12, yPercent: -3 },
+        {
+          scale: 1.02,
+          yPercent: 7,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: nextSection,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        }
+      );
+    }
+
+    if (number) {
+      gsap.fromTo(number,
+        { xPercent: 10, opacity: .15 },
+        {
+          xPercent: -4,
+          opacity: .82,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: nextSection,
+            start: 'top 88%',
+            end: 'bottom 20%',
+            scrub: 1
+          }
+        }
+      );
+    }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: nextSection,
+        start: 'top 68%',
+        once: true
+      }
+    });
+
+    if (copy) {
+      tl.fromTo(copy,
+        { opacity: 0, x: -54 },
+        { opacity: 1, x: 0, duration: .95, ease: 'power4.out' },
+        0
+      );
+    }
+
+    if (panel) {
+      tl.fromTo(panel,
+        { opacity: 0, x: 58, rotateY: -5 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 1, ease: 'power4.out' },
+        .08
+      );
+    }
+  }
+}
+
+// --------------------------------------------
+// Pointer-following light on cards and panels
+// --------------------------------------------
+function initInteractiveSurfaces() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  const selector = [
+    '.value-card',
+    '.slide-card',
+    '.program-detail',
+    '.info-card',
+    '.process-item',
+    '.gallery-image-card',
+    '.next-edition-v2__panel'
+  ].join(',');
+
+  document.querySelectorAll(selector).forEach((surface) => {
+    surface.classList.add('signature-surface');
+
+    surface.addEventListener('pointermove', (event) => {
+      const rect = surface.getBoundingClientRect();
+      surface.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
+      surface.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
+    });
+  });
+}
+
+// --------------------------------------------
+// Subtle magnetic movement only on primary CTAs
+// --------------------------------------------
+function initMagneticButtons() {
+  if (prefersReducedMotion || window.matchMedia('(pointer: coarse)').matches) return;
+
+  document.querySelectorAll('.magnetic, .hero-actions .btn-primary').forEach((button) => {
+    button.addEventListener('pointermove', (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+
+      gsap.to(button, {
+        x: x * .08,
+        y: y * .12,
+        duration: .28,
+        ease: 'power2.out'
+      });
+    });
+
+    button.addEventListener('pointerleave', () => {
+      gsap.to(button, {
+        x: 0,
+        y: 0,
+        duration: .48,
+        ease: 'elastic.out(1, .45)'
+      });
+    });
+  });
+}
+
