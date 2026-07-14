@@ -33,10 +33,12 @@
 
     <nav class="jdv-nav" aria-label="Navegação principal">
       <ul class="jdv-nav__list">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html" aria-current="page">Galeria</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#parceiros">Parceiros</a></li>
+        <li><a href="index.html#terceira-edicao">Ingressos</a></li>
+        <li><a href="#contacto">Contactos</a></li>
       </ul>
     </nav>
 
@@ -51,10 +53,12 @@
   <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
     <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html" aria-current="page">Galeria</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#parceiros">Parceiros</a></li>
+        <li><a href="index.html#terceira-edicao">Ingressos</a></li>
+        <li><a href="#contacto">Contactos</a></li>
       </ul>
     </nav>
   </div>
@@ -68,41 +72,51 @@
         <button type="button" data-edition-filter="segunda">Segunda edição</button>
       </div>
 
+      <!-- ============================================
+           GALERIA — CARDS MULTIMÉDIA
+           Use data-media-type="image" ou data-media-type="video".
+           Para vídeos locais, colocar MP4 em assets/videos/primeira-edicao/ ou assets/videos/segunda-edicao/.
+           Modelo de vídeo:
+           <button class="gallery-image-card gallery-image-card--video" type="button" data-edition="segunda" data-media-type="video" data-media-src="assets/videos/segunda-edicao/segunda-edicao.mp4" aria-label="Abrir vídeo">
+             <img src="assets/images/gallery/capa-video-segunda-edicao.jpeg" alt="Vídeo da segunda edição" loading="lazy">
+             <span class="gallery-play-icon" aria-hidden="true">&#9658;</span>
+           </button>
+           ============================================ -->
       <div class="gallery-image-grid" data-gallery-grid>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic.jpeg" alt="Palestra de Liderança Juvenil" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic2.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic2.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic2.jpeg" alt="Workshop de Comunicação e Oratória" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic3.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic3.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic3.jpeg" alt="Formação Profissional" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic4.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic4.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic4.jpeg" alt="Fórum de Juventude e Cidadania" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic5.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic5.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic5.jpeg" alt="Encontro com Parceiros" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="primeira" data-lightbox-src="assets/images/ed1-pic6.jpeg" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="primeira" data-media-type="image" data-media-src="assets/images/ed1-pic6.jpeg" aria-label="Abrir imagem da primeira edição">
           <img src="assets/images/ed1-pic6.jpeg" alt="Sessão de Empregabilidade" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/foto.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/foto.jpeg" alt="Dinâmica de Grupo" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/pessoas2.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/pessoas2.jpeg" alt="Aprendizagem Digital" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/pessoas4.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/pessoas4.jpeg" alt="Juventude em Conversa" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/palco2.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/palco2.jpeg" alt="Networking Real" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/palco3.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/palco3.jpeg" alt="Inteligência Emocional" loading="lazy">
         </button>
-        <button class="gallery-image-card" type="button" data-edition="segunda" data-lightbox-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&h=1000&q=82" aria-label="Abrir imagem da galeria">
+        <button class="gallery-image-card" type="button" data-edition="segunda" data-media-type="image" data-media-src="assets/images/negocio2.jpeg" aria-label="Abrir imagem da segunda edição">
           <img src="assets/images/negocio2.jpeg" alt="Educação Financeira" loading="lazy">
         </button>
       </div>
@@ -114,6 +128,7 @@
   <button class="lightbox__close" type="button" aria-label="Fechar imagem">×</button>
   <figure class="lightbox__figure">
     <img src="" alt="">
+    <video controls playsinline preload="metadata" hidden></video>
   </figure>
 </div>
 

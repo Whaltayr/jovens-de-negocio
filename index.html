@@ -33,10 +33,12 @@
 
     <nav class="jdv-nav" aria-label="Navegação principal">
       <ul class="jdv-nav__list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html" aria-current="page">Início</a></li>
         <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
+        <li><a href="#terceira-edicao">Ingressos</a></li>
+        <li><a href="#contacto">Contactos</a></li>
       </ul>
     </nav>
 
@@ -51,10 +53,12 @@
   <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
     <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html" aria-current="page">Início</a></li>
         <li><a href="sobre-programas.html">Programas</a></li>
         <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
+        <li><a href="#terceira-edicao">Ingressos</a></li>
+        <li><a href="#contacto">Contactos</a></li>
       </ul>
     </nav>
   </div>
@@ -444,6 +448,9 @@
 
 
   <!-- TERCEIRA EDIÇÃO — CTA PRINCIPAL -->
+  <!-- ============================================
+       TERCEIRA EDIÇÃO — CTA WHATSAPP
+       ============================================ -->
   <section class="next-edition-v2" id="terceira-edicao" data-chapter="05" aria-labelledby="terceira-edicao-title">
     <div class="next-edition-v2__media" aria-hidden="true">
       <img src="assets/images/palco9.jpeg" alt="" loading="lazy">
@@ -483,41 +490,77 @@
         </div>
 
         <p class="next-edition-v2__panel-kicker">03ª edição</p>
-        <h3>Quero participar ou tornar-me parceiro.</h3>
+        <h3>Quero participar na terceira edição.</h3>
         <p>
           Fala diretamente com a organização para receber informações,
-          acompanhar as novidades ou apresentar uma parceria.
+          acompanhar as novidades e tratar a reserva do ingresso manualmente.
         </p>
 
-        <a
-          href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor."
+        <div class="next-edition-v2__actions">
+          <a
+          href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20um%20ingresso%20para%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor.%20Podem%20enviar-me%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20participa%C3%A7%C3%A3o%20e%20o%20pagamento%3F"
           class="btn btn-primary next-edition-v2__cta magnetic"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Reservar ingresso para a terceira edição pelo WhatsApp"
         >
-          Falar pelo WhatsApp
+          Reservar ingresso pelo WhatsApp
           <span aria-hidden="true">↗</span>
-        </a>
+          </a>
+          <a class="btn btn-ghost next-edition-v2__contact" href="#contacto">Falar com a organização</a>
+        </div>
       </aside>
     </div>
   </section>
 
-  <!-- PARCEIROS -->
-  <section class="parceiros" data-chapter="06" aria-labelledby="parceiros-title">
+  <!-- ============================================
+       PARCEIROS — GRID RESPONSIVO
+       ============================================ -->
+  <section class="parceiros partners-section" id="parceiros" data-chapter="06" aria-labelledby="parceiros-title">
     <div class="container">
       <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Parceiros</p>
       <h2 class="section-title" id="parceiros-title" data-reveal>Quem caminha connosco</h2>
-    </div>
-    <div class="marquee" aria-hidden="false">
-      <div class="marquee-track">
-        <span>Governo Provincial do Huambo</span>
-        <span>AGT Huambo</span>
-        <span>ISP Sol Nascente</span>
-        <span>Rádio Huambo</span>
-        <span>Governo Provincial do Huambo</span>
-        <span>AGT Huambo</span>
-        <span>ISP Sol Nascente</span>
-        <span>Rádio Huambo</span>
+      <div class="partners-grid" aria-label="Parceiros do Projeto Jovens do Valor">
+        <article class="partner-card signature-surface" data-reveal>
+          <!-- Colocar o logótipo em assets/images/partners/governo-provincial-huambo.png e substituir este placeholder por <img>. -->
+          <div class="partner-card__logo" aria-hidden="true"><span>GPH</span></div>
+          <h3>Governo Provincial do Huambo</h3>
+          <p>Parceiro institucional</p>
+        </article>
+
+        <article class="partner-card signature-surface" data-reveal>
+          <!-- Colocar o logótipo em assets/images/partners/agt-huambo.png e substituir este placeholder por <img>. -->
+          <div class="partner-card__logo" aria-hidden="true"><span>AGT</span></div>
+          <h3>AGT Huambo</h3>
+          <p>Parceiro institucional</p>
+        </article>
+
+        <article class="partner-card signature-surface" data-reveal>
+          <!-- Colocar o logótipo em assets/images/partners/isp-sol-nascente.png e substituir este placeholder por <img>. -->
+          <div class="partner-card__logo" aria-hidden="true"><span>ISP</span></div>
+          <h3>ISP Sol Nascente</h3>
+          <p>Parceiro académico</p>
+        </article>
+
+        <article class="partner-card signature-surface" data-reveal>
+          <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+          <div class="partner-card__logo" aria-hidden="true"><span>RH</span></div>
+          <h3>Rádio Huambo</h3>
+          <p>Parceiro de comunicação</p>
+        </article>
+      </div>
+
+      <div class="partners-cta" data-reveal>
+        <p>Quer apoiar a formação da juventude angolana?</p>
+        <a
+          href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20oportunidades%20de%20parceria%20com%20o%20Projeto%20Jovens%20do%20Valor."
+          class="btn btn-ghost"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Saber mais sobre oportunidades de parceria pelo WhatsApp"
+        >
+          Tornar-se parceiro
+        </a>
       </div>
     </div>
   </section>

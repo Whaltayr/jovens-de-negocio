@@ -3,16 +3,19 @@
 // GSAP/ScrollTrigger melhorado sem redesenhar o layout
 // ============================================
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+let hasGSAP = false;
 
 let lenisInstance = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+  refreshMotionLibraries();
+
   if (hasGSAP) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.defaults({ ease: 'power3.out' });
   }
 
+  reportMotionStatus();
   initSmoothScroll();
   initHeader();
   initHeroMotion();
@@ -27,6 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------------------------
+// Diagnóstico das bibliotecas externas
+// --------------------------------------------
+function refreshMotionLibraries() {
+  hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+}
+
+function reportMotionStatus() {
+  const status = {
+    gsap: typeof window.gsap !== 'undefined',
+    scrollTrigger: typeof window.ScrollTrigger !== 'undefined',
+    lenis: typeof window.Lenis !== 'undefined'
+  };
+
+  window.__jdvMotionStatus = status;
+
+  if (!status.gsap || !status.scrollTrigger || !status.lenis) {
+    console.info(
+      '[Jovens do Valor] Bibliotecas de animação:',
+      status,
+      'Se GSAP/ScrollTrigger/Lenis estiverem false, verifica ligação ao CDN, adblock/extensões ou testa em janela anónima.'
+    );
+  }
+}
+
+// --------------------------------------------
 // Lenis smooth scroll
 // --------------------------------------------
 function initSmoothScroll() {
@@ -38,6 +66,7 @@ function initSmoothScroll() {
       smoothWheel: true,
       wheelMultiplier: 0.9
     });
+    window.__jdvLenis = lenisInstance;
 
     if (hasGSAP) {
       lenisInstance.on('scroll', ScrollTrigger.update);
@@ -721,6 +750,7 @@ function initInteractiveSurfaces() {
     '.program-detail',
     '.info-card',
     '.process-item',
+    '.partner-card',
     '.gallery-image-card',
     '.next-edition-v2__panel'
   ].join(',');
@@ -740,7 +770,7 @@ function initInteractiveSurfaces() {
 // Subtle magnetic movement only on primary CTAs
 // --------------------------------------------
 function initMagneticButtons() {
-  if (prefersReducedMotion || window.matchMedia('(pointer: coarse)').matches) return;
+  if (prefersReducedMotion || !hasGSAP || window.matchMedia('(pointer: coarse)').matches) return;
 
   document.querySelectorAll('.magnetic, .hero-actions .btn-primary').forEach((button) => {
     button.addEventListener('pointermove', (event) => {
@@ -771,15 +801,16 @@ function initMagneticButtons() {
 // O que nos diferencia — entrada alternada esquerda/direita
 // --------------------------------------------
 function initImpactRowsMotion() {
-  const rows = gsap.utils.toArray('[data-impact-row]');
+  const rows = hasGSAP ? gsap.utils.toArray('[data-impact-row]') : Array.from(document.querySelectorAll('[data-impact-row]'));
   if (!rows.length) return;
 
   if (prefersReducedMotion || !hasGSAP) {
     rows.forEach((row) => {
-      gsap.set(row, { clearProps: 'all' });
-      gsap.set(row.querySelectorAll('.impact-row__media, .impact-row__text'), {
-        clearProps: 'all',
-        opacity: 1
+      row.style.opacity = 1;
+      row.style.overflow = 'visible';
+      row.querySelectorAll('.impact-row__media, .impact-row__text').forEach((item) => {
+        item.style.opacity = 1;
+        item.style.transform = 'none';
       });
     });
     return;

@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initHeader();
   initEditionFilter();
-  initLightbox();
+  initMediaLightbox();
 });
 
 function initSmoothScroll() {
   if (!prefersReducedMotion && typeof window.Lenis !== 'undefined') {
     lenisInstance = new Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.9 });
+    window.__jdvLenis = lenisInstance;
 
     if (typeof window.gsap !== 'undefined') {
       gsap.ticker.add((time) => lenisInstance.raf(time * 1000));
@@ -102,10 +103,15 @@ function initHeader() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeMenu(true);
-      closeLightbox();
-    }
+    if (e.key !== 'Escape') return;
+
+    const menuIsOpen = toggle.getAttribute('aria-expanded') === 'true';
+    const lightboxIsOpen = document.getElementById('galleryLightbox')?.classList.contains('is-open');
+    if (!menuIsOpen && !lightboxIsOpen) return;
+
+    e.preventDefault();
+    if (menuIsOpen) closeMenu(true);
+    if (lightboxIsOpen) closeLightbox();
   });
 }
 
@@ -136,6 +142,8 @@ function closeMobileNav(returnFocus = false) {
   if (returnFocus && toggle) toggle.focus({ preventScroll: true });
 }
 
+// Filtra os cards pelos botões "Primeira edição" e "Segunda edição".
+// Usa data-edition-filter nos botões e data-edition nos cards visuais.
 function initEditionFilter() {
   const buttons = document.querySelectorAll('[data-edition-filter]');
   const cards = document.querySelectorAll('[data-edition]');
@@ -159,21 +167,50 @@ function initEditionFilter() {
   applyFilter(buttons[0].dataset.editionFilter);
 }
 
-function initLightbox() {
+// Abre o lightbox multimédia a partir dos atributos:
+// data-media-type="image|video" e data-media-src="caminho-do-ficheiro".
+// Para vídeo, só mostra o elemento <video>, usa controls/playsinline e não ativa som automaticamente.
+function initMediaLightbox() {
   const lightbox = document.getElementById('galleryLightbox');
   if (!lightbox) return;
 
   const img = lightbox.querySelector('img');
+  const video = lightbox.querySelector('video');
   const close = lightbox.querySelector('.lightbox__close');
+  close?.setAttribute('aria-label', 'Fechar galeria');
 
-  document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
+  document.querySelectorAll('[data-media-type][data-media-src]').forEach((button) => {
     button.addEventListener('click', () => {
-      if (!img) return;
-      img.src = button.dataset.lightboxSrc;
-      img.alt = button.querySelector('img')?.alt || 'Imagem da galeria';
+      const mediaType = button.dataset.mediaType;
+      const mediaSrc = button.dataset.mediaSrc;
+      const mediaAlt = button.querySelector('img')?.alt || 'Media da galeria';
+
+      if (!mediaSrc || !img || !video) return;
+
+      if (mediaType === 'video') {
+        img.hidden = true;
+        img.removeAttribute('src');
+        img.alt = '';
+
+        video.hidden = false;
+        video.src = mediaSrc;
+        video.muted = false;
+        video.load();
+      } else {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        video.hidden = true;
+
+        img.hidden = false;
+        img.src = mediaSrc;
+        img.alt = mediaAlt;
+      }
+
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('nav-open');
+      if (lenisInstance) lenisInstance.stop();
       close?.focus({ preventScroll: true });
     });
   });
@@ -189,9 +226,27 @@ function closeLightbox() {
   const lightbox = document.getElementById('galleryLightbox');
   if (!lightbox || !lightbox.classList.contains('is-open')) return;
 
+  const img = lightbox.querySelector('img');
+  const video = lightbox.querySelector('video');
+
+  if (video) {
+    // Ao fechar, pausa o vídeo, remove o src e chama load() para libertar o ficheiro.
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    video.hidden = true;
+  }
+
+  if (img) {
+    img.removeAttribute('src');
+    img.alt = '';
+    img.hidden = true;
+  }
+
   lightbox.classList.remove('is-open');
   lightbox.setAttribute('aria-hidden', 'true');
 
   const menuOpen = document.getElementById('navToggle')?.getAttribute('aria-expanded') === 'true';
   if (!menuOpen) document.body.classList.remove('nav-open');
+  if (lenisInstance && !menuOpen) lenisInstance.start();
 }
