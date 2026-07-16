@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroMotion();
   initHeroParallax();
   initSectionMotion();
+  initThirdEditionMedia();
+  initThirdEditionMotion();
   initSignatureSystem();
   initImpactRowsMotion();
   initInteractiveSurfaces();
@@ -571,6 +573,43 @@ function initValueSlider() {
   });
 }
 
+// ============================================
+// TERCEIRA EDIÇÃO — VÍDEO E ANIMAÇÃO
+// ============================================
+function initThirdEditionMedia() {
+  const video = document.querySelector('.third-edition__video');
+  if (!video) return;
+
+  // Em reduced motion ou em ecrãs pequenos, mantém o poster sem reprodução automática.
+  if (prefersReducedMotion || window.matchMedia('(max-width: 768px)').matches) {
+    video.pause();
+    video.removeAttribute('autoplay');
+  }
+}
+
+function initThirdEditionMotion() {
+  const section = document.querySelector('.third-edition');
+  if (!section || prefersReducedMotion || !hasGSAP) return;
+
+  const label = section.querySelector('.third-edition__label');
+  const title = section.querySelector('.third-edition__title');
+  const description = section.querySelector('.third-edition__description');
+  const promotion = section.querySelector('.third-edition__promotion');
+  const normalCard = section.querySelector('[data-ticket-card="normal"]');
+  const vipCard = section.querySelector('[data-ticket-card="vip"]');
+
+  const timeline = gsap.timeline({
+    scrollTrigger: { trigger: section, start: 'top 68%', once: true },
+    defaults: { ease: 'power3.out' }
+  });
+
+  timeline
+    .fromTo([label, title], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .72, stagger: .08, immediateRender: false })
+    .fromTo([description, promotion], { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .62, stagger: .08, immediateRender: false }, '-=.38')
+    .fromTo(normalCard, { opacity: 0, x: -28 }, { opacity: 1, x: 0, duration: .68, immediateRender: false }, '-=.36')
+    .fromTo(vipCard, { opacity: 0, x: 28 }, { opacity: 1, x: 0, duration: .68, immediateRender: false }, '-=.58');
+}
+
 // --------------------------------------------
 // Brand signature: hero orbit, kinetic ribbon and third-edition story
 // --------------------------------------------
@@ -751,6 +790,7 @@ function initInteractiveSurfaces() {
     '.info-card',
     '.process-item',
     '.partner-card',
+    '.ticket-card',
     '.gallery-image-card',
     '.next-edition-v2__panel'
   ].join(',');
