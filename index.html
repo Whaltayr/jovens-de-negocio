@@ -1,607 +1,748 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto Jovens de Valor — Huambo, Angola</title>
-<meta name="description" content="Projeto Jovens de Valor: formação em liderança, empregabilidade e cidadania para a juventude angolana. Huambo, Angola.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Jovens de Valor — Huambo, Angola</title>
+  <meta name="description"
+    content="Projeto Jovens de Valor: formação em liderança, empregabilidade e cidadania para a juventude angolana. Huambo, Angola.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<a class="skip-link" href="#conteudo">Saltar para o conteúdo principal</a>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo principal</a>
 
-<!-- Símbolo de marca, reutilizado como marcador de secção
+  <!-- Símbolo de marca, reutilizado como marcador de secção
 <svg style="display:none" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 40 40">
     <path d="M20 2 L36 20 L20 38 L4 20 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
     <path d="M20 12 L28 20 L20 28 L12 20 Z" fill="currentColor" opacity="0.85"/>
   </symbol> -->
-</svg>
+  </svg>
 
-<header class="site-header jdv-header" id="topo">
-  <div class="container jdv-header__bar">
-    <a href="index.html#topo" class="brand jdv-brand">
-      <!-- <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg> -->
-      <span class="brand-name">Jovens<em>de Valor</em></span>
-    </a>
+  <header class="site-header jdv-header" id="topo">
+    <div class="container jdv-header__bar">
+      <a href="index.html#topo" class="brand jdv-brand">
+        <!-- <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg> -->
+        <span class="brand-name">Jovens<em>de Valor</em></span>
+      </a>
 
-    <nav class="jdv-nav" aria-label="Navegação principal">
-      <ul class="jdv-nav__list">
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="sobre-programas.html">Programas</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="#parceiros">Parceiros</a></li>
-        <li><a href="#terceira-edicao">Ingressos</a></li>
-        <li><a href="#contacto">Contactos</a></li>
-      </ul>
-    </nav>
+      <nav class="jdv-nav" aria-label="Navegação principal">
+        <ul class="jdv-nav__list">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="sobre-programas.html">Programas</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <li><a href="#terceira-edicao">Ingressos</a></li>
+          <li><a href="#contacto">Contactos</a></li>
+        </ul>
+      </nav>
 
-    <button class="nav-toggle jdv-menu-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span class="sr-only">Abrir menu</span>
-    </button>
-  </div>
-
-  <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
-    <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
-      <ul>
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="sobre-programas.html">Programas</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="#parceiros">Parceiros</a></li>
-        <li><a href="#terceira-edicao">Ingressos</a></li>
-        <li><a href="#contacto">Contactos</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="conteudo">
-
-  <!-- HERO -->
-  <section class="hero" aria-label="Abertura">
-    <div class="hero-media" aria-hidden="true">
-      <img src="assets/images/hero/hero2.jpeg" alt="" id="heroImg">
-      <div class="hero-overlay"></div>
+      <button class="nav-toggle jdv-menu-toggle" id="navToggle" type="button" aria-expanded="false"
+        aria-controls="navMobile" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
     </div>
 
-    <div class="container hero-inner">
-      <p class="eyebrow eyebrow-light"><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Huambo, Angola — fundado a 25 de Outubro de 2025</p>
-      <h1 class="hero-title" data-split>Somos jovens de Valor, o futuro começa connosco</h1>
-      <div class="hero-bottom-row">
-        <p class="hero-sub">Formação em liderança, empregabilidade e cidadania para a juventude angolana</p>
-        <div class="hero-actions">
-          <a href="#manifesto" class="btn btn-primary">Conhecer o projeto</a>
-          <a href="#atuacao" class="btn btn-ghost">Ver programas</a>
+    <div class="nav-mobile jdv-mobile-menu" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu principal"
+      aria-hidden="true">
+      <nav class="jdv-mobile-menu__panel" aria-label="Navegação mobile">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="sobre-programas.html">Programas</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <li><a href="#terceira-edicao">Ingressos</a></li>
+          <li><a href="#contacto">Contactos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Abertura">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/images/hero/hero2.jpeg" alt="" id="heroImg">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow eyebrow-light"><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>Huambo, Angola — fundado a 25 de Outubro de 2025</p>
+        <h1 class="hero-title" data-split>Somos jovens de Valor, o futuro começa connosco</h1>
+        <div class="hero-bottom-row">
+          <p class="hero-sub">Formação em liderança, empregabilidade e cidadania para a juventude angolana</p>
+          <div class="hero-actions">
+            <a href="#manifesto" class="btn btn-primary">Conhecer o projeto</a>
+            <a href="#atuacao" class="btn btn-ghost">Ver programas</a>
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <div class="hero-signature" aria-hidden="true">
-      <svg class="hero-signature__orbit" viewBox="0 0 320 320">
-        <defs>
-          <linearGradient id="signatureGold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e8c877" stop-opacity=".95"/>
-            <stop offset="55%" stop-color="#c9972e" stop-opacity=".55"/>
-            <stop offset="100%" stop-color="#f4ecdd" stop-opacity=".18"/>
-          </linearGradient>
-        </defs>
-        <rect class="hero-signature__ring hero-signature__ring--outer" x="52" y="52" width="216" height="216" rx="8" pathLength="1"/>
-        <rect class="hero-signature__ring hero-signature__ring--inner" x="91" y="91" width="138" height="138" rx="5" pathLength="1"/>
-        <path class="hero-signature__axis" d="M160 18V302M18 160H302" pathLength="1"/>
-      </svg>
+      <div class="hero-signature" aria-hidden="true">
+        <svg class="hero-signature__orbit" viewBox="0 0 320 320">
+          <defs>
+            <linearGradient id="signatureGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e8c877" stop-opacity=".95" />
+              <stop offset="55%" stop-color="#c9972e" stop-opacity=".55" />
+              <stop offset="100%" stop-color="#f4ecdd" stop-opacity=".18" />
+            </linearGradient>
+          </defs>
+          <rect class="hero-signature__ring hero-signature__ring--outer" x="52" y="52" width="216" height="216" rx="8"
+            pathLength="1" />
+          <rect class="hero-signature__ring hero-signature__ring--inner" x="91" y="91" width="138" height="138" rx="5"
+            pathLength="1" />
+          <path class="hero-signature__axis" d="M160 18V302M18 160H302" pathLength="1" />
+        </svg>
 
-      <div class="hero-signature__core">
-        <svg viewBox="0 0 40 40"><use href="#mark"></use></svg>
-      </div>
-
-      <span class="hero-signature__meta">HUAMBO · ANGOLA · 2025</span>
-    </div>
-
-    <a href="#manifesto" class="scroll-cue" aria-label="Descer para a próxima secção">
-      <span></span>
-    </a>
-  </section>
-
-
-  <section class="brand-ribbon" aria-label="Princípios do Projeto Jovens de Valor">
-    <div class="brand-ribbon__viewport">
-      <div class="brand-ribbon__track">
-        <span>Liderança</span><i>◆</i>
-        <span>Ética</span><i>◆</i>
-        <span>Empregabilidade</span><i>◆</i>
-        <span>Cidadania</span><i>◆</i>
-        <span>Inovação Social</span><i>◆</i>
-        <span>Liderança</span><i>◆</i>
-        <span>Ética</span><i>◆</i>
-        <span>Empregabilidade</span><i>◆</i>
-        <span>Cidadania</span><i>◆</i>
-        <span>Inovação Social</span><i>◆</i>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO -->
-  <section class="manifesto" data-chapter="01" id="manifesto" aria-labelledby="manifesto-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>A nossa história</p>
-      <h2 class="section-title" id="manifesto-title" data-reveal>Nascido no Huambo, para formar quem vai liderar Angola</h2>
-      <p class="manifesto-text" data-reveal>O Projeto Jovens de Valor nasceu no Huambo, idealizado por José Salomão Setamba como uma iniciativa educativa, social e formativa voltada para o desenvolvimento integral da juventude angolana. Desde a sua criação, promove palestras, workshops, fóruns e programas de capacitação, em parceria com instituições públicas, privadas e da sociedade civil</p>
-
-      <blockquote class="manifesto-quote" data-reveal>
-        <p>“Um jovem que aprende a liderar com ética torna-se a fundação de uma comunidade inteira”</p>
-        <cite>José Salomão Setamba, Fundador</cite>
-      </blockquote>
-
-      <div class="mv-split">
-        <div class="mv-item" data-reveal>
-          <h3>Missão</h3>
-          <p>Formar jovens conscientes, éticos e preparados para liderar, promovendo competências pessoais, profissionais e sociais que transformem comunidades e o país</p>
+        <div class="hero-signature__core">
+          <svg viewBox="0 0 40 40">
+            <use href="#mark"></use>
+          </svg>
         </div>
-        <div class="mv-item" data-reveal>
-          <h3>Visão</h3>
-          <p>Ser uma das principais plataformas de desenvolvimento juvenil em Angola — referência em liderança, empreendedorismo, cidadania e inovação social</p>
+
+        <span class="hero-signature__meta">HUAMBO · ANGOLA · 2025</span>
+      </div>
+
+      <a href="#manifesto" class="scroll-cue" aria-label="Descer para a próxima secção">
+        <span></span>
+      </a>
+    </section>
+
+
+    <section class="brand-ribbon" aria-label="Princípios do Projeto Jovens de Valor">
+      <div class="brand-ribbon__viewport">
+        <div class="brand-ribbon__track">
+          <span>Liderança</span><i>◆</i>
+          <span>Ética</span><i>◆</i>
+          <span>Empregabilidade</span><i>◆</i>
+          <span>Cidadania</span><i>◆</i>
+          <span>Inovação Social</span><i>◆</i>
+          <span>Liderança</span><i>◆</i>
+          <span>Ética</span><i>◆</i>
+          <span>Empregabilidade</span><i>◆</i>
+          <span>Cidadania</span><i>◆</i>
+          <span>Inovação Social</span><i>◆</i>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VALORES -->
-  <section class="valores" data-chapter="02" id="valores" aria-labelledby="valores-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>O que nos guia</p>
-      <h2 class="section-title" id="valores-title" data-reveal>Doze valores, um só compromisso</h2>
+    <!-- MANIFESTO -->
+    <section class="manifesto" data-chapter="01" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>A nossa história</p>
+        <h2 class="section-title" id="manifesto-title" data-reveal>Nascido no Huambo, para formar quem vai liderar
+          Angola</h2>
+        <p class="manifesto-text" data-reveal>O Projeto Jovens de Valor nasceu no Huambo, idealizado por José Salomão
+          Setamba como uma iniciativa educativa, social e formativa voltada para o desenvolvimento integral da juventude
+          angolana. Desde a sua criação, promove palestras, workshops, fóruns e programas de capacitação, em parceria
+          com instituições públicas, privadas e da sociedade civil</p>
 
-      <div class="value-slider-wrap">
-        <button class="slider-btn value-prev value-nav value-nav--prev" id="valuePrev" aria-label="Anteriores">‹</button>
+        <blockquote class="manifesto-quote" data-reveal>
+          <p>“Um jovem que aprende a liderar com ética torna-se a fundação de uma comunidade inteira”</p>
+          <cite>José Salomão Setamba, Fundador</cite>
+        </blockquote>
 
-        <ul class="value-slider" id="valueSlider" tabindex="0" aria-label="Os nossos valores">
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1573165706511-3ffde6ef1fe3?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">01</span>
-                <h3>Liderança</h3>
-                <p>Iniciativa que inspira outros a agir</p>
+        <div class="mv-split">
+          <div class="mv-item" data-reveal>
+            <h3>Missão</h3>
+            <p>Formar jovens conscientes, éticos e preparados para liderar, promovendo competências pessoais,
+              profissionais e sociais que transformem comunidades e o país</p>
+          </div>
+          <div class="mv-item" data-reveal>
+            <h3>Visão</h3>
+            <p>Ser uma das principais plataformas de desenvolvimento juvenil em Angola — referência em liderança,
+              empreendedorismo, cidadania e inovação social</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="valores" data-chapter="02" id="valores" aria-labelledby="valores-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>O que nos guia</p>
+        <h2 class="section-title" id="valores-title" data-reveal>Doze valores, um só compromisso</h2>
+
+        <div class="value-slider-wrap">
+          <button class="slider-btn value-prev value-nav value-nav--prev" id="valuePrev"
+            aria-label="Anteriores">‹</button>
+
+          <ul class="value-slider" id="valueSlider" tabindex="0" aria-label="Os nossos valores">
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1573165706511-3ffde6ef1fe3?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">01</span>
+                    <h3>Liderança</h3>
+                    <p>Iniciativa que inspira outros a agir</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1781084990050-437492c3b45a?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="" loading="
+                    lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">02</span>
+                    <h3>Ética</h3>
+                    <p>Decisões certas, mesmo sem plateia</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1620746998983-b4f9d5383a2d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">03</span>
+                    <h3>Integridade</h3>
+                    <p>Coerência entre o que se diz e o que se faz</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1585783540205-74112af9716e?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">04</span>
+                    <h3>Respeito</h3>
+                    <p>Reconhecer o valor em cada pessoa</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1579711869674-0581d1bd1f6c?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">05</span>
+                    <h3>Excelência</h3>
+                    <p>Rigor em cada detalhe do que se entrega</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1722963220475-979db2dbf216?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">06</span>
+                    <h3>Responsabilidade Social</h3>
+                    <p>Compromisso com o bem comum</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1655720359248-eeace8c709c5?q=80&w=625&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">07</span>
+                    <h3>Solidariedade</h3>
+                    <p>Crescer é também erguer o outro</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1551399427-3b0afc91c2e2?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">08</span>
+                    <h3>Inclusão</h3>
+                    <p>Espaço para todas as vozes</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1491911923017-19f90d8d7f83?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">09</span>
+                    <h3>Cooperação</h3>
+                    <p>Resultados que se constroem em equipa</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1505845753232-f74a87b62db6?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">10</span>
+                    <h3>Desenvolvimento Humano</h3>
+                    <p>Formar a pessoa, não só o profissional</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">11</span>
+                    <h3>Inovação</h3>
+                    <p>Novas respostas para desafios reais</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="value-slide">
+              <article class="value-card" data-reveal>
+                <div class="value-image">
+                  <img src="assets/images/img7.jpeg" alt="" loading="lazy">
+                  <div class="value-card__overlay">
+                    <span class="value-card__index">12</span>
+                    <h3>Compromisso</h3>
+                    <p>Presença que não falha</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <button class="slider-btn value-next value-nav value-nav--next" id="valueNext"
+            aria-label="Seguintes">›</button>
+        </div>
+
+        <div class="value-progress" aria-hidden="true">
+          <span class="value-progress-fill" id="valueProgressFill"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="atuacao" data-chapter="03" id="atuacao" aria-labelledby="atuacao-title">
+      <div class="container atuacao-head">
+        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>Como atuamos</p>
+        <h2 class="section-title" id="atuacao-title" data-reveal>Três formas de gerar valor</h2>
+      </div>
+
+      <div class="slider-wrap program-slider-shell">
+        <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Anterior">‹</button>
+
+        <ul class="slider program-slider" id="slider" tabindex="0" aria-label="Áreas de atuação">
+          <li class="slide">
+            <article class="slide-card" data-reveal>
+              <div class="slide-media" aria-hidden="true">
+                <img src="assets/images/pessoas6.jpeg" alt="" loading="lazy">
+                <span class="slide-media__index">01</span>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1781084990050-437492c3b45a?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">02</span>
-                <h3>Ética</h3>
-                <p>Decisões certas, mesmo sem plateia</p>
+              <div class="slide-panel">
+                <span class="slide-tag">Palestras</span>
+                <h3>Conversas que abrem caminhos</h3>
+                <p>Sessões presenciais, online e híbridas sobre temas centrais para a formação do jovem angolano</p>
+                <ul class="topic-list">
+                  <li>Liderança</li>
+                  <li>Empregabilidade</li>
+                  <li>Empreendedorismo</li>
+                  <li>Educação Financeira</li>
+                  <li>Inteligência Emocional</li>
+                  <li>Cidadania</li>
+                </ul>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1620746998983-b4f9d5383a2d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">03</span>
-                <h3>Integridade</h3>
-                <p>Coerência entre o que se diz e o que se faz</p>
+            </article>
+          </li>
+          <li class="slide">
+            <article class="slide-card" data-reveal>
+              <div class="slide-media" aria-hidden="true">
+                <img src="assets/images/palco9.jpeg" alt="" loading="lazy">
+                <span class="slide-media__index">02</span>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1585783540205-74112af9716e?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">04</span>
-                <h3>Respeito</h3>
-                <p>Reconhecer o valor em cada pessoa</p>
+              <div class="slide-panel">
+                <span class="slide-tag">Workshops</span>
+                <h3>Prática para o mundo real</h3>
+                <p>Formatos práticos e participativos, focados em competências imediatamente aplicáveis</p>
+                <ul class="topic-list">
+                  <li>Liderança prática</li>
+                  <li>Elaboração de CV</li>
+                  <li>LinkedIn profissional</li>
+                  <li>Entrevistas de emprego</li>
+                  <li>Comunicação e oratória</li>
+                  <li>Ferramentas digitais</li>
+                </ul>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1579711869674-0581d1bd1f6c?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">05</span>
-                <h3>Excelência</h3>
-                <p>Rigor em cada detalhe do que se entrega</p>
+            </article>
+          </li>
+          <li class="slide">
+            <article class="slide-card" data-reveal>
+              <div class="slide-media" aria-hidden="true">
+                <img src="assets/images/pessoas4.jpeg" alt="" loading="lazy">
+                <span class="slide-media__index">03</span>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1722963220475-979db2dbf216?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">06</span>
-                <h3>Responsabilidade Social</h3>
-                <p>Compromisso com o bem comum</p>
+              <div class="slide-panel">
+                <span class="slide-tag">Formações Profissionais</span>
+                <h3>Capacitação alinhada ao mercado</h3>
+                <p>Programas estruturados, sempre alinhados às necessidades reais do mercado de trabalho</p>
+                <ul class="topic-list">
+                  <li>Liderança</li>
+                  <li>Empregabilidade</li>
+                  <li>Soft skills</li>
+                  <li>Empreendedorismo</li>
+                  <li>Gestão</li>
+                </ul>
               </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1655720359248-eeace8c709c5?q=80&w=625&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">07</span>
-                <h3>Solidariedade</h3>
-                <p>Crescer é também erguer o outro</p>
-              </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1551399427-3b0afc91c2e2?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">08</span>
-                <h3>Inclusão</h3>
-                <p>Espaço para todas as vozes</p>
-              </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1491911923017-19f90d8d7f83?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">09</span>
-                <h3>Cooperação</h3>
-                <p>Resultados que se constroem em equipa</p>
-              </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1505845753232-f74a87b62db6?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">10</span>
-                <h3>Desenvolvimento Humano</h3>
-                <p>Formar a pessoa, não só o profissional</p>
-              </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">11</span>
-                <h3>Inovação</h3>
-                <p>Novas respostas para desafios reais</p>
-              </div>
-            </div>
-          </article></li>
-          <li class="value-slide"><article class="value-card" data-reveal>
-            <div class="value-image">
-              <img src="assets/images/img7.jpeg" alt="" loading="lazy">
-              <div class="value-card__overlay">
-                <span class="value-card__index">12</span>
-                <h3>Compromisso</h3>
-                <p>Presença que não falha</p>
-              </div>
-            </div>
-          </article></li>
+            </article>
+          </li>
         </ul>
 
-        <button class="slider-btn value-next value-nav value-nav--next" id="valueNext" aria-label="Seguintes">›</button>
+        <button class="slider-btn slider-next" id="sliderNext" aria-label="Seguinte">›</button>
+      </div>
+    </section>
+
+    <!-- PORQUÊ ESCOLHER-NOS -->
+    <section class="porque porque--parallax" data-chapter="04" id="porque" aria-labelledby="porque-title">
+      <div class="porque-parallax__bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&h=1200&q=82"
+          alt="" loading="lazy">
+      </div>
+      <div class="porque-parallax__shade" aria-hidden="true"></div>
+      <div class="porque-parallax__grain" aria-hidden="true"></div>
+      <div class="porque-parallax__grid" aria-hidden="true"></div>
+
+      <div class="container porque-parallax__head">
+        <p class="eyebrow" data-reveal>
+          <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>
+          Porquê o Jovens de Valor
+        </p>
+        <h2 class="section-title" id="porque-title" data-reveal>O que nos diferencia</h2>
+        <p class="porque-parallax__intro" data-reveal>
+          Cinco razões que mostram porque esta iniciativa não é apenas uma sequência de eventos,
+          mas uma plataforma real de formação, ligação e transformação juvenil
+        </p>
       </div>
 
-      <div class="value-progress" aria-hidden="true">
-        <span class="value-progress-fill" id="valueProgressFill"></span>
+      <div class="porque-parallax__stage" aria-label="Diferenciais do projeto">
+        <article class="impact-row impact-row--left" data-impact-row>
+          <figure class="impact-row__media impact-row__media--a" aria-hidden="true">
+            <img src="assets/images/why-1.jpeg" alt="" loading="lazy">
+          </figure>
+          <div class="impact-row__text">
+            <span>01</span>
+            <h3>Liderança ética como eixo central</h3>
+            <p>Formação baseada em valores, carácter e responsabilidade, não apenas em técnica</p>
+          </div>
+        </article>
+
+        <article class="impact-row impact-row--right" data-impact-row>
+          <figure class="impact-row__media impact-row__media--b" aria-hidden="true">
+            <img src="assets/images/palco6.jpeg" alt="" loading="lazy">
+          </figure>
+          <div class="impact-row__text">
+            <span>02</span>
+            <h3>Educação + empregabilidade + cidadania</h3>
+            <p>Um percurso integrado que prepara o jovem para pensar, agir, trabalhar e servir a comunidade</p>
+          </div>
+        </article>
+
+        <article class="impact-row impact-row--left" data-impact-row>
+          <figure class="impact-row__media impact-row__media--c" aria-hidden="true">
+            <img src="assets/images/img4.jpeg" alt="" loading="lazy">
+          </figure>
+          <div class="impact-row__text">
+            <span>03</span>
+            <h3>Networking real</h3>
+            <p>Ligação entre jovens, empresas, instituições e mentores que podem abrir portas concretas</p>
+          </div>
+        </article>
+
+        <article class="impact-row impact-row--right" data-impact-row>
+          <figure class="impact-row__media impact-row__media--d" aria-hidden="true">
+            <img src="assets/images/img2.jpeg" alt="" loading="lazy">
+          </figure>
+          <div class="impact-row__text">
+            <span>04</span>
+            <h3>Parcerias estratégicas</h3>
+            <p>Trabalho conjunto com universidades, empresas, bancos, organizações e instituições públicas</p>
+          </div>
+        </article>
+
+        <article class="impact-row impact-row--center" data-impact-row>
+          <figure class="impact-row__media impact-row__media--e" aria-hidden="true">
+            <img src="assets/images/img1.jpeg" alt="" loading="lazy">
+          </figure>
+          <div class="impact-row__text">
+            <span>05</span>
+            <h3>Acompanhamento contínuo</h3>
+            <p>O desenvolvimento do jovem não termina numa palestra: continua em comunidade, orientação e prática</p>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
 
-  <!-- ÁREAS DE ATUAÇÃO -->
-  <section class="atuacao" data-chapter="03" id="atuacao" aria-labelledby="atuacao-title">
-    <div class="container atuacao-head">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Como atuamos</p>
-      <h2 class="section-title" id="atuacao-title" data-reveal>Três formas de gerar valor</h2>
-    </div>
-
-    <div class="slider-wrap program-slider-shell">
-      <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Anterior">‹</button>
-
-      <ul class="slider program-slider" id="slider" tabindex="0" aria-label="Áreas de atuação">
-        <li class="slide">
-          <article class="slide-card" data-reveal>
-            <div class="slide-media" aria-hidden="true">
-              <img src="assets/images/pessoas6.jpeg" alt="" loading="lazy">
-              <span class="slide-media__index">01</span>
-            </div>
-            <div class="slide-panel">
-              <span class="slide-tag">Palestras</span>
-              <h3>Conversas que abrem caminhos</h3>
-              <p>Sessões presenciais, online e híbridas sobre temas centrais para a formação do jovem angolano</p>
-              <ul class="topic-list">
-                <li>Liderança</li><li>Empregabilidade</li><li>Empreendedorismo</li><li>Educação Financeira</li><li>Inteligência Emocional</li><li>Cidadania</li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li class="slide">
-          <article class="slide-card" data-reveal>
-            <div class="slide-media" aria-hidden="true">
-              <img src="assets/images/palco9.jpeg" alt="" loading="lazy">
-              <span class="slide-media__index">02</span>
-            </div>
-            <div class="slide-panel">
-              <span class="slide-tag">Workshops</span>
-              <h3>Prática para o mundo real</h3>
-              <p>Formatos práticos e participativos, focados em competências imediatamente aplicáveis</p>
-              <ul class="topic-list">
-                <li>Liderança prática</li><li>Elaboração de CV</li><li>LinkedIn profissional</li><li>Entrevistas de emprego</li><li>Comunicação e oratória</li><li>Ferramentas digitais</li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li class="slide">
-          <article class="slide-card" data-reveal>
-            <div class="slide-media" aria-hidden="true">
-              <img src="assets/images/pessoas4.jpeg" alt="" loading="lazy">
-              <span class="slide-media__index">03</span>
-            </div>
-            <div class="slide-panel">
-              <span class="slide-tag">Formações Profissionais</span>
-              <h3>Capacitação alinhada ao mercado</h3>
-              <p>Programas estruturados, sempre alinhados às necessidades reais do mercado de trabalho</p>
-              <ul class="topic-list">
-                <li>Liderança</li><li>Empregabilidade</li><li>Soft skills</li><li>Empreendedorismo</li><li>Gestão</li>
-              </ul>
-            </div>
-          </article>
-        </li>
-      </ul>
-
-      <button class="slider-btn slider-next" id="sliderNext" aria-label="Seguinte">›</button>
-    </div>
-  </section>
-
-  <!-- PORQUÊ ESCOLHER-NOS -->
-  <section class="porque porque--parallax" data-chapter="04" id="porque" aria-labelledby="porque-title">
-    <div class="porque-parallax__bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&h=1200&q=82" alt="" loading="lazy">
-    </div>
-    <div class="porque-parallax__shade" aria-hidden="true"></div>
-    <div class="porque-parallax__grain" aria-hidden="true"></div>
-    <div class="porque-parallax__grid" aria-hidden="true"></div>
-
-    <div class="container porque-parallax__head">
-      <p class="eyebrow" data-reveal>
-        <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
-        Porquê o Jovens de Valor
-      </p>
-      <h2 class="section-title" id="porque-title" data-reveal>O que nos diferencia</h2>
-      <p class="porque-parallax__intro" data-reveal>
-        Cinco razões que mostram porque esta iniciativa não é apenas uma sequência de eventos,
-        mas uma plataforma real de formação, ligação e transformação juvenil
-      </p>
-    </div>
-
-    <div class="porque-parallax__stage" aria-label="Diferenciais do projeto">
-      <article class="impact-row impact-row--left" data-impact-row>
-        <figure class="impact-row__media impact-row__media--a" aria-hidden="true">
-          <img src="assets/images/why-1.jpeg" alt="" loading="lazy">
-        </figure>
-        <div class="impact-row__text">
-          <span>01</span>
-          <h3>Liderança ética como eixo central</h3>
-          <p>Formação baseada em valores, carácter e responsabilidade, não apenas em técnica</p>
-        </div>
-      </article>
-
-      <article class="impact-row impact-row--right" data-impact-row>
-        <figure class="impact-row__media impact-row__media--b" aria-hidden="true">
-          <img src="assets/images/palco6.jpeg" alt="" loading="lazy">
-        </figure>
-        <div class="impact-row__text">
-          <span>02</span>
-          <h3>Educação + empregabilidade + cidadania</h3>
-          <p>Um percurso integrado que prepara o jovem para pensar, agir, trabalhar e servir a comunidade</p>
-        </div>
-      </article>
-
-      <article class="impact-row impact-row--left" data-impact-row>
-        <figure class="impact-row__media impact-row__media--c" aria-hidden="true">
-          <img src="assets/images/img4.jpeg" alt="" loading="lazy">
-        </figure>
-        <div class="impact-row__text">
-          <span>03</span>
-          <h3>Networking real</h3>
-          <p>Ligação entre jovens, empresas, instituições e mentores que podem abrir portas concretas</p>
-        </div>
-      </article>
-
-      <article class="impact-row impact-row--right" data-impact-row>
-        <figure class="impact-row__media impact-row__media--d" aria-hidden="true">
-          <img src="assets/images/img2.jpeg" alt="" loading="lazy">
-        </figure>
-        <div class="impact-row__text">
-          <span>04</span>
-          <h3>Parcerias estratégicas</h3>
-          <p>Trabalho conjunto com universidades, empresas, bancos, organizações e instituições públicas</p>
-        </div>
-      </article>
-
-      <article class="impact-row impact-row--center" data-impact-row>
-        <figure class="impact-row__media impact-row__media--e" aria-hidden="true">
-          <img src="assets/images/img1.jpeg" alt="" loading="lazy">
-        </figure>
-        <div class="impact-row__text">
-          <span>05</span>
-          <h3>Acompanhamento contínuo</h3>
-          <p>O desenvolvimento do jovem não termina numa palestra: continua em comunidade, orientação e prática</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="container">
-      <p class="diff-banner porque-parallax__banner" data-reveal>
-        Presencial · Online · Híbrido — do Huambo para todas as províncias de Angola e, a seguir, para os países africanos de língua portuguesa
-      </p>
-    </div>
-  </section>
+      <div class="container">
+        <p class="diff-banner porque-parallax__banner" data-reveal>
+          Presencial · Online · Híbrido — do Huambo para todas as províncias de Angola e, a seguir, para os países
+          africanos de língua portuguesa
+        </p>
+      </div>
+    </section>
 
 
-  <!-- TERCEIRA EDIÇÃO — CTA PRINCIPAL -->
-  <!-- ============================================
+    <!-- TERCEIRA EDIÇÃO — CTA PRINCIPAL -->
+    <!-- ============================================
        TERCEIRA EDIÇÃO — CTA WHATSAPP
        ============================================ -->
-  <!-- ============================================
+    <!-- ============================================
        TERCEIRA EDIÇÃO — EXPERIÊNCIA E INGRESSOS
        ============================================ -->
-  <section class="third-edition" id="terceira-edicao" data-chapter="05" aria-labelledby="third-edition-title">
-    <div class="third-edition__media" aria-hidden="true">
-      <video class="third-edition__video" autoplay muted loop playsinline preload="metadata" poster="assets/images/palco9.jpeg">
-        <source src="assets/videos/third-edition/vid1.mp4" type="video/mp4">
-      </video>
-      <div class="third-edition__image-fallback"></div>
-    </div>
-    <div class="third-edition__overlay" aria-hidden="true"></div>
-    <div class="container third-edition__inner">
-      <div class="third-edition__content">
-        <p class="eyebrow eyebrow-light third-edition__label">
-          <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>
-          3ª edição
-        </p>
-        <h2 class="third-edition__title" id="third-edition-title">Evoluir começa com uma decisão</h2>
-        <p class="third-edition__description">O Jovens do Valor é um espaço de aprendizado, conexões e crescimento pessoal para quem quer evoluir e construir o seu futuro com mais visão</p>
-        <p class="third-edition__promotion">Ingressos em promoção na Loja Setamba</p>
+    <section class="third-edition" id="terceira-edicao" data-chapter="05" aria-labelledby="third-edition-title">
+      <div class="third-edition__media" aria-hidden="true">
+        <video class="third-edition__video" autoplay muted loop playsinline preload="metadata"
+          poster="assets/images/palco9.jpeg">
+          <source src="assets/videos/third-edition/vid1.mp4" type="video/mp4">
+        </video>
+        <div class="third-edition__image-fallback"></div>
       </div>
-      <div class="ticket-grid" aria-label="Ingressos da terceira edição">
-        <article class="ticket-card signature-surface" data-ticket-card="normal">
-          <p class="ticket-card__label">Ingresso</p>
-          <h3>Normal</h3>
-          <p class="ticket-card__price"><span>3.500</span> Kz</p>
-          <p class="ticket-card__description">Acesso à experiência da terceira edição do Projeto Jovens do Valor</p>
-          <a class="btn btn-primary ticket-card__button magnetic" href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20um%20ingresso%20Normal%20para%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor%2C%20no%20valor%20promocional%20de%203.500%20Kz.%20Podem%20enviar-me%20as%20informa%C3%A7%C3%B5es%20para%20pagamento%20e%20levantamento%20na%20Loja%20Setamba%3F" target="_blank" rel="noopener noreferrer" aria-label="Reservar ingresso Normal pelo WhatsApp">Reservar ingresso Normal</a>
-        </article>
-        <article class="ticket-card ticket-card--vip signature-surface" data-ticket-card="vip">
-          <span class="ticket-card__badge">VIP</span>
-          <p class="ticket-card__label">Ingresso</p>
-          <h3>VIP</h3>
-          <p class="ticket-card__price"><span>8.000</span> Kz</p>
-          <p class="ticket-card__description">Uma experiência diferenciada para quem quer viver a terceira edição com acesso VIP</p>
-          <a class="btn btn-primary ticket-card__button magnetic" href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20um%20ingresso%20VIP%20para%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor%2C%20no%20valor%20promocional%20de%208.000%20Kz.%20Podem%20enviar-me%20as%20informa%C3%A7%C3%B5es%20para%20pagamento%20e%20levantamento%20na%20Loja%20Setamba%3F" target="_blank" rel="noopener noreferrer" aria-label="Reservar ingresso VIP pelo WhatsApp">Reservar ingresso VIP</a>
-        </article>
+      <div class="third-edition__overlay" aria-hidden="true"></div>
+      <div class="container third-edition__inner">
+        <div class="third-edition__content">
+          <p class="eyebrow eyebrow-light third-edition__label">
+            <svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+              <use href="#mark"></use>
+            </svg>
+            3ª edição
+          </p>
+          <h2 class="third-edition__title" id="third-edition-title">Evoluir começa com uma decisão</h2>
+          <p class="third-edition__description">O Jovens do Valor é um espaço de aprendizado, conexões e crescimento
+            pessoal para quem quer evoluir e construir o seu futuro com mais visão</p>
+          <p class="third-edition__promotion">Ingressos em promoção na Loja Setamba</p>
+        </div>
+        <div class="ticket-grid" aria-label="Ingressos da terceira edição">
+          <article class="ticket-card signature-surface" data-ticket-card="normal">
+            <p class="ticket-card__label">Ingresso</p>
+            <h3>Normal</h3>
+            <p class="ticket-card__price"><span>3.500</span> Kz</p>
+            <p class="ticket-card__description">Acesso à experiência da terceira edição do Projeto Jovens do Valor</p>
+            <a class="btn btn-primary ticket-card__button magnetic"
+              href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20um%20ingresso%20Normal%20para%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor%2C%20no%20valor%20promocional%20de%203.500%20Kz.%20Podem%20enviar-me%20as%20informa%C3%A7%C3%B5es%20para%20pagamento%20e%20levantamento%20na%20Loja%20Setamba%3F"
+              target="_blank" rel="noopener noreferrer" aria-label="Reservar ingresso Normal pelo WhatsApp">Reservar
+              ingresso Normal</a>
+          </article>
+          <article class="ticket-card ticket-card--vip signature-surface" data-ticket-card="vip">
+            <span class="ticket-card__badge">VIP</span>
+            <p class="ticket-card__label">Ingresso</p>
+            <h3>VIP</h3>
+            <p class="ticket-card__price"><span>8.000</span> Kz</p>
+            <p class="ticket-card__description">Uma experiência diferenciada para quem quer viver a terceira edição com
+              acesso VIP</p>
+            <a class="btn btn-primary ticket-card__button magnetic"
+              href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20um%20ingresso%20VIP%20para%20a%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Projeto%20Jovens%20do%20Valor%2C%20no%20valor%20promocional%20de%208.000%20Kz.%20Podem%20enviar-me%20as%20informa%C3%A7%C3%B5es%20para%20pagamento%20e%20levantamento%20na%20Loja%20Setamba%3F"
+              target="_blank" rel="noopener noreferrer" aria-label="Reservar ingresso VIP pelo WhatsApp">Reservar
+              ingresso VIP</a>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================
+    <!-- ============================================
        PARCEIROS — GRID RESPONSIVO
        ============================================ -->
-  <section class="parceiros partners-section" id="parceiros" data-chapter="06" aria-labelledby="parceiros-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"></use></svg>Parceiros</p>
-      <h2 class="section-title" id="parceiros-title" data-reveal>Quem caminha connosco</h2>
-      <div class="partners-grid" aria-label="Parceiros do Projeto Jovens do Valor">
-        <article class="partner-card signature-surface" data-reveal>
-          <!-- Colocar o logótipo em assets/images/partners/governo-provincial-huambo.png e substituir este placeholder por <img>. -->
-          <div class="partner-card__logo" aria-hidden="true"><span>GPH</span></div>
-          <h3>Governo Provincial do Huambo</h3>
-          <p>Parceiro institucional</p>
-        </article>
+    <section class="parceiros partners-section" id="parceiros" data-chapter="06" aria-labelledby="parceiros-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal><svg class="mark-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#mark"></use>
+          </svg>Parceiros</p>
+        <h2 class="section-title" id="parceiros-title" data-reveal>Quem caminha connosco</h2>
+        <div class="partners-grid" aria-label="Parceiros do Projeto Jovens do Valor">
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/governo-provincial-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p7.jpeg" aria-hidden="true"></img>
+            <h3>Sacolas Huambo</h3>
+            <p>Parceiro institucional</p>
+          </article>
 
-        <article class="partner-card signature-surface" data-reveal>
-          <!-- Colocar o logótipo em assets/images/partners/agt-huambo.png e substituir este placeholder por <img>. -->
-          <div class="partner-card__logo" aria-hidden="true"><span>AGT</span></div>
-          <h3>AGT Huambo</h3>
-          <p>Parceiro institucional</p>
-        </article>
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/agt-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p2.jpeg">
+            <h3>ELivros Book-Store</h3>
+            <p>Parceiro Comércial</p>
+          </article>
 
-        <article class="partner-card signature-surface" data-reveal>
-          <!-- Colocar o logótipo em assets/images/partners/isp-sol-nascente.png e substituir este placeholder por <img>. -->
-          <div class="partner-card__logo" aria-hidden="true"><span>ISP</span></div>
-          <h3>ISP Sol Nascente</h3>
-          <p>Parceiro académico</p>
-        </article>
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/isp-sol-nascente.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p3.jpeg">
+            <h3>Chilume Odonto</h3>
+            <p>Parceiro Comércial</p>
+          </article>
 
-        <article class="partner-card signature-surface" data-reveal>
-          <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
-          <div class="partner-card__logo" aria-hidden="true"><span>RH</span></div>
-          <h3>Rádio Huambo</h3>
-          <p>Parceiro de comunicação</p>
-        </article>
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p4.jpeg">
+            <h3>Astro Capas & Acessórios</h3>
+            <p>Parceiro de comunicação</p>
+          </article>
+
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p5.jpeg">
+            <h3>Escola de Condução Visão Segura</h3>
+            <p>Parceiro de comunicação</p>
+          </article>
+
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p6.jpeg">
+            <h3>Espaço Digital</h3>
+            <p>Parceiro de comunicação</p>
+          </article>
+
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p11.jpeg">
+            <h3>Setamba</h3>
+            <p>Parceiro de comunicação</p>
+          </article>
+
+          <article class="partner-card signature-surface" data-reveal>
+            <!-- Colocar o logótipo em assets/images/partners/radio-huambo.png e substituir este placeholder por <img>. -->
+            <img class="partner-card__logo" src="assets/images/partners/p10.jpeg">
+            <h3>EUGE Rent a Car</h3>
+            <p>Parceiro de comunicação</p>
+          </article>
+        </div>
+
+        <div class="partners-cta" data-reveal>
+          <p>Quer apoiar a formação da juventude angolana?</p>
+          <a href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20oportunidades%20de%20parceria%20com%20o%20Projeto%20Jovens%20do%20Valor."
+            class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+            aria-label="Saber mais sobre oportunidades de parceria pelo WhatsApp">
+            Tornar-se parceiro
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="partners-cta" data-reveal>
-        <p>Quer apoiar a formação da juventude angolana?</p>
-        <a
-          href="https://wa.me/244923781020?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20oportunidades%20de%20parceria%20com%20o%20Projeto%20Jovens%20do%20Valor."
-          class="btn btn-ghost"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Saber mais sobre oportunidades de parceria pelo WhatsApp"
-        >
-          Tornar-se parceiro
+    <!-- EXPLORAR MAIS -->
+    <section class="explorar" data-chapter="07" aria-label="Explorar mais">
+      <div class="container">
+        <a href="sobre-programas.html" class="explorar-row" data-reveal>
+          <span class="explorar-title">Sobre &amp; Programas</span>
+          <span class="explorar-desc">Missão, valores, equipa e formações em detalhe</span>
+          <span class="explorar-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="galeria.html" class="explorar-row" data-reveal>
+          <span class="explorar-title">Galeria</span>
+          <span class="explorar-desc">Momentos de palestras, workshops e formações</span>
+          <span class="explorar-arrow" aria-hidden="true">→</span>
         </a>
       </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Jovens<em>do Valor</em></span>
+        <p>Somos jovens de Valor, o futuro começa connosco</p>
+        <p class="footer-founder">Idealizado por José Salomão Setamba</p>
+      </div>
+
+      <address class="footer-contact">
+        <span>Huambo, Angola</span>
+        <a href="tel:+244923781020">+244 923 781 020</a>
+        <a href="mailto:valorjovensde@gmail.com">valorjovensde@gmail.com</a>
+      </address>
+
+      <nav class="footer-social" aria-label="Redes sociais">
+        <a href=" https://www.facebook.com/share/1KrQmMzyUt/?mibextid=wwXIfr" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path
+              d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/valor.jovensde?igsh=MXcxZm5ocXJkb3M5aQ==" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.5.6.2 1 .5 1.5 1 .4.4.7.9 1 1.5.2.5.4 1.3.5 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.5-.2.6-.5 1-1 1.5-.4.4-.9.7-1.5 1-.5.2-1.3.4-2.5.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.5-.6-.2-1-.5-1.5-1-.4-.4-.7-.9-1-1.5-.2-.5-.4-1.3-.5-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.5.2-.6.5-1 1-1.5.4-.4.9-.7 1.5-1 .5-.2 1.3-.4 2.5-.5C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-1.9.4-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.2.3-.3.9-.4 1.9-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 1.9.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.2.9.3 1.9.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 1.9-.4.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.2-.3.3-.9.4-1.9.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.2-.9-.3-1.9-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.7-2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/projecto-jovens-de-valor1/" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path
+              d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v10.75H3V9.75Zm7 0h3.8v1.47h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76v6.47h-4v-5.74c0-1.37-.02-3.13-1.9-3.13-1.9 0-2.2 1.5-2.2 3.03v5.84h-4V9.75Z" />
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@joven.de.valor1?_r=1&_t=ZS-97yio5y32dI" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path
+              d="M14.5 2h3c.1 1.6.7 2.9 1.8 3.9 1 1 2.3 1.5 3.7 1.6v3.3c-1.7 0-3.3-.5-4.7-1.4v6.9c0 3.6-2.9 6.2-6.2 6.2-1.4 0-2.8-.5-3.9-1.4a6.2 6.2 0 0 1-2.3-4.8c0-3.5 2.9-6.2 6.2-6.2.4 0 .8 0 1.2.1v3.4c-.4-.1-.8-.2-1.2-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 3-1.2 3-2.9V2Z" />
+          </svg>
+        </a>
+      </nav>
     </div>
-  </section>
 
-  <!-- EXPLORAR MAIS -->
-  <section class="explorar" data-chapter="07" aria-label="Explorar mais">
-    <div class="container">
-      <a href="sobre-programas.html" class="explorar-row" data-reveal>
-        <span class="explorar-title">Sobre &amp; Programas</span>
-        <span class="explorar-desc">Missão, valores, equipa e formações em detalhe</span>
-        <span class="explorar-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="galeria.html" class="explorar-row" data-reveal>
-        <span class="explorar-title">Galeria</span>
-        <span class="explorar-desc">Momentos de palestras, workshops e formações</span>
-        <span class="explorar-arrow" aria-hidden="true">→</span>
-      </a>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Projeto Jovens de Valor. Todos os direitos reservados</p>
+      </div>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer" id="contacto">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="brand-name">Jovens<em>do Valor</em></span>
-      <p>Somos jovens de Valor, o futuro começa connosco</p>
-      <p class="footer-founder">Idealizado por José Salomão Setamba</p>
-    </div>
-
-    <address class="footer-contact">
-      <span>Huambo, Angola</span>
-      <a href="tel:+244923781020">+244 923 781 020</a>
-      <a href="mailto:valorjovensde@gmail.com">valorjovensde@gmail.com</a>
-    </address>
-
-    <nav class="footer-social" aria-label="Redes sociais">
-      <a href=" https://www.facebook.com/share/1KrQmMzyUt/?mibextid=wwXIfr" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/valor.jovensde?igsh=MXcxZm5ocXJkb3M5aQ==" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.5.6.2 1 .5 1.5 1 .4.4.7.9 1 1.5.2.5.4 1.3.5 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.5-.2.6-.5 1-1 1.5-.4.4-.9.7-1.5 1-.5.2-1.3.4-2.5.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.5-.6-.2-1-.5-1.5-1-.4-.4-.7-.9-1-1.5-.2-.5-.4-1.3-.5-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.5.2-.6.5-1 1-1.5.4-.4.9-.7 1.5-1 .5-.2 1.3-.4 2.5-.5C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-1.9.4-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.2.3-.3.9-.4 1.9-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 1.9.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.2.9.3 1.9.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 1.9-.4.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.2-.3.3-.9.4-1.9.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.2-.9-.3-1.9-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.7-2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/projecto-jovens-de-valor1/" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v10.75H3V9.75Zm7 0h3.8v1.47h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76v6.47h-4v-5.74c0-1.37-.02-3.13-1.9-3.13-1.9 0-2.2 1.5-2.2 3.03v5.84h-4V9.75Z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@joven.de.valor1?_r=1&_t=ZS-97yio5y32dI" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M14.5 2h3c.1 1.6.7 2.9 1.8 3.9 1 1 2.3 1.5 3.7 1.6v3.3c-1.7 0-3.3-.5-4.7-1.4v6.9c0 3.6-2.9 6.2-6.2 6.2-1.4 0-2.8-.5-3.9-1.4a6.2 6.2 0 0 1-2.3-4.8c0-3.5 2.9-6.2 6.2-6.2.4 0 .8 0 1.2.1v3.4c-.4-.1-.8-.2-1.2-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 3-1.2 3-2.9V2Z"/></svg>
-      </a>
-    </nav>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="container">
-      <p>© 2026 Projeto Jovens de Valor. Todos os direitos reservados</p>
-    </div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
