@@ -66,6 +66,20 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.
 
 :focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
 
+.sixto{
+  color: var(--gold);
+
+}
+.texx{margin-bottom: 2rem;}
+.sixtolink{
+  
+  font-weight: 500;
+  color: var(--bg-elevated);
+  text-decoration: dashed;
+  padding: 1rem 2rem;
+  background-color: var(--ink);
+  border-radius: var(--radius);
+}
 .eyebrow {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: var(--fs-eyebrow);
